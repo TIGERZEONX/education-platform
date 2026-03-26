@@ -16,13 +16,7 @@ function upsertStudentActivity(
   studentId: string,
   studentName: string,
   timestamp: string,
-  patch: Partial<{
-    latestEngagement: number;
-    latestEngagementBand: number;
-    latestEngagementCategory: "engaged" | "neutral" | "disengaged";
-    latestStatus: string;
-    latestFeedback: string;
-  }>,
+  patch: Partial<{ latestEngagement: number; latestStatus: string; latestFeedback: string }>,
 ): void {
   const existing = viewModel.studentActivityById[studentId] ?? {
     studentId,
@@ -111,8 +105,6 @@ export function consumeClassEnvelope(
       payload.timestamp,
       {
       latestEngagement: payload.engagementScore,
-      latestEngagementBand: payload.engagementScoreBand,
-      latestEngagementCategory: payload.engagementCategory,
       },
     );
     return viewModel;

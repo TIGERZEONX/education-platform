@@ -8,8 +8,6 @@ export interface StudentActivityView {
   studentId: string;
   studentName: string;
   latestEngagement?: number;
-  latestEngagementBand?: number;
-  latestEngagementCategory?: "engaged" | "neutral" | "disengaged";
   latestStatus?: string;
   latestFeedback?: string;
   silentStudent: boolean;

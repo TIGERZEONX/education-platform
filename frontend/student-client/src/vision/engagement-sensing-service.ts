@@ -8,10 +8,6 @@ export interface VisualObservation {
   gazeFocusScore: number;
   attentivenessScore: number;
   confidence: number;
-  faceWidthRatio?: number;
-  detectionStability?: number;
-  frameTimestamp?: string;
-  faceCropDataUrl?: string;
 }
 
 export interface EngagementSensingOutput {
@@ -58,11 +54,11 @@ export function createEngagementSensingService(): EngagementSensingService {
   return {
     processObservation: (observation) => {
       const base = deriveEngagementScore(observation);
-      const lowConfidence = observation.confidence < 0.45;
+      const lowConfidence = observation.confidence < 0.6;
       const noFace = !observation.facePresent;
 
       if (lowConfidence || noFace) {
-        const decayed = Math.max(0, Number((lastStableScore * 0.985).toFixed(3)));
+        const decayed = Math.max(0, Number((lastStableScore * 0.97).toFixed(3)));
         pushRecentScore(decayed);
         latestOutput = {
           engagementScore: decayed,

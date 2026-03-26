@@ -34,8 +34,6 @@ export interface FlaggedStudentInspectionItem {
   studentName: string;
   reasons: string[];
   latestEngagement?: number;
-  latestEngagementBand?: number;
-  latestEngagementCategory?: "engaged" | "neutral" | "disengaged";
   latestStatus?: string;
   repeatedConfusionCount: number;
 }
@@ -172,8 +170,6 @@ export function buildTeacherDecisionSupportView(
           : []),
       ],
       latestEngagement: student.latestEngagement,
-      latestEngagementBand: student.latestEngagementBand,
-      latestEngagementCategory: student.latestEngagementCategory,
       latestStatus: student.latestStatus,
       repeatedConfusionCount: student.repeatedConfusionCount,
     }));
