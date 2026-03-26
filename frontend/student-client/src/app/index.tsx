@@ -48,10 +48,22 @@ const studentContext = bootstrapStudentClient({
   cameraAccessAdapter: {
     requestAccess: async () => {
       // In browser: request real camera access
+      if (!navigator.mediaDevices || typeof navigator.mediaDevices.getUserMedia !== "function") {
+        console.warn("[student-client] camera api unavailable", {
+          isSecureContext: window.isSecureContext,
+        });
+        return "unavailable";
+      }
+
       try {
         await navigator.mediaDevices.getUserMedia({ video: true });
         return "granted";
-      } catch {
+      } catch (error) {
+        console.warn("[student-client] camera request denied", {
+          errorName: error instanceof DOMException ? error.name : "unknown",
+          errorMessage: error instanceof Error ? error.message : String(error),
+          isSecureContext: window.isSecureContext,
+        });
         return "denied";
       }
     },

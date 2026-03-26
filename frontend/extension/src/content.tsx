@@ -257,7 +257,26 @@ function ExtensionStudentApp({ onClose, studentName }: { onClose: () => void, st
         } catch (e) { console.error("[CognitivePulse] Publish failed", e); }
       },
       cameraAccessAdapter: {
-        requestAccess: async () => { try { await navigator.mediaDevices.getUserMedia({ video: true }); return "granted"; } catch { return "denied"; } },
+        requestAccess: async () => {
+          if (!navigator.mediaDevices || typeof navigator.mediaDevices.getUserMedia !== "function") {
+            console.warn("[CognitivePulse] camera api unavailable in extension context", {
+              isSecureContext: window.isSecureContext,
+            });
+            return "unavailable";
+          }
+
+          try {
+            await navigator.mediaDevices.getUserMedia({ video: true });
+            return "granted";
+          } catch (error) {
+            console.warn("[CognitivePulse] camera request denied", {
+              errorName: error instanceof DOMException ? error.name : "unknown",
+              errorMessage: error instanceof Error ? error.message : String(error),
+              isSecureContext: window.isSecureContext,
+            });
+            return "denied";
+          }
+        },
         stopCamera: () => {},
       },
       feedbackMinIntervalMs: 1500,

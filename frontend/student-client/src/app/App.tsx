@@ -27,6 +27,78 @@ function LiveFaceTracker() {
   const TARGET_CAMERA_WIDTH = 1280;
   const TARGET_CAMERA_HEIGHT = 720;
 
+  const permissionPolicyBlocksCamera = (): boolean => {
+    const policy = (document as Document & {
+      permissionsPolicy?: { allowsFeature: (feature: string) => boolean };
+      featurePolicy?: { allowsFeature: (feature: string) => boolean };
+    }).permissionsPolicy ??
+      (document as Document & { featurePolicy?: { allowsFeature: (feature: string) => boolean } }).featurePolicy;
+
+    if (!policy || typeof policy.allowsFeature !== "function") {
+      return false;
+    }
+
+    try {
+      return !policy.allowsFeature("camera");
+    } catch {
+      return false;
+    }
+  };
+
+  const describeCameraError = (error: unknown): string => {
+    if (permissionPolicyBlocksCamera()) {
+      return "Camera blocked by site Permissions-Policy (no browser prompt possible on this page).";
+    }
+
+    if (!navigator.mediaDevices || typeof navigator.mediaDevices.getUserMedia !== "function") {
+      return "Camera API unavailable in this context. Open over https or localhost.";
+    }
+
+    if (!window.isSecureContext) {
+      return "Camera requires a secure context (https or localhost).";
+    }
+
+    if (error instanceof DOMException) {
+      if (error.name === "NotAllowedError" || error.name === "SecurityError") {
+        return "Camera access blocked by browser, OS privacy, or site policy.";
+      }
+      if (error.name === "NotFoundError") {
+        return "No usable camera device found.";
+      }
+      if (error.name === "NotReadableError") {
+        return "Camera is already in use by another app/tab.";
+      }
+      if (error.name === "OverconstrainedError") {
+        return "Requested camera settings not supported by this device.";
+      }
+      return `Camera error: ${error.name}`;
+    }
+
+    return "Camera denied or unavailable.";
+  };
+
+  const acquireCameraStream = async (): Promise<MediaStream> => {
+    if (!navigator.mediaDevices || typeof navigator.mediaDevices.getUserMedia !== "function") {
+      throw new Error("Camera API unavailable");
+    }
+
+    try {
+      return await navigator.mediaDevices.getUserMedia({
+        video: {
+          width: { ideal: TARGET_CAMERA_WIDTH },
+          height: { ideal: TARGET_CAMERA_HEIGHT },
+          facingMode: "user",
+        },
+      });
+    } catch (primaryError) {
+      // Retry with broad constraints to recover from device/constraint incompatibilities.
+      if (primaryError instanceof DOMException && (primaryError.name === "OverconstrainedError" || primaryError.name === "NotFoundError")) {
+        return navigator.mediaDevices.getUserMedia({ video: true });
+      }
+      throw primaryError;
+    }
+  };
+
   const clamp = (value: number, min: number, max: number): number => {
     return Math.max(min, Math.min(max, value));
   };
@@ -177,19 +249,16 @@ function LiveFaceTracker() {
     
     async function start() {
       try {
-        stream = await navigator.mediaDevices.getUserMedia({
-          video: {
-            width: { ideal: TARGET_CAMERA_WIDTH },
-            height: { ideal: TARGET_CAMERA_HEIGHT },
-            facingMode: "user",
-          },
-        });
+        stream = await acquireCameraStream();
         if (!isMounted) return;
         
         await clientYolo.preload();
 
         if (videoRef.current) {
           videoRef.current.srcObject = stream;
+          await videoRef.current.play().catch(() => {
+            // MediaPipe camera loop still drives frames; play() may be blocked by browser heuristics.
+          });
           if (debugMode && containerRef.current) {
             debugOverlayRef.current.mount(containerRef.current);
           }
@@ -308,8 +377,17 @@ function LiveFaceTracker() {
           camera.start();
         }
       } catch (err) {
+        const message = describeCameraError(err);
+        console.error("[student-camera] start failed", {
+          message,
+          isSecureContext: window.isSecureContext,
+          hasMediaDevices: Boolean(navigator.mediaDevices),
+          errorName: err instanceof DOMException ? err.name : "unknown",
+          errorMessage: err instanceof Error ? err.message : String(err),
+          permissionsPolicyBlocksCamera: permissionPolicyBlocksCamera(),
+        });
         if (isMounted) {
-          setErrorMsg("Camera denied or unavailable.");
+          setErrorMsg(message);
           setIsActive(false);
         }
       }
