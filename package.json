@@ -1,0 +1,74 @@
+{
+  "name": "cognitivepulse-platform",
+  "version": "1.0.0",
+  "description": "Foundational scaffold for CognitivePulse with student and teacher clients, MQTT messaging, intelligence fusion, and persistence boundaries.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/api/index.js",
+    "start:server": "tsx backend/api/index.ts",
+    "build": "webpack --config webpack.config.js",
+    "test": "jest",
+    "test:backend": "tsx tests/backend/run-backend-tests.ts",
+    "dev:frontend": "webpack serve --config webpack.config.js",
+    "dev:server": "tsx --watch backend/api/index.ts",
+    "dev:student:cli": "tsx frontend/student-client/src/app/main.ts",
+    "dev:teacher:cli": "tsx frontend/teacher-dashboard/src/app/main.ts",
+    "dev:ingest": "tsx backend/api/src/ingestion/main.ts",
+    "dev:live": "tsx backend/api/src/inprocess/live-classroom.ts",
+    "lint:student": "tsc --noEmit --skipLibCheck --pretty false frontend/student-client/src/app/main.ts frontend/student-client/src/app/bootstrap.ts shared/communication/mqtt/contracts/index.ts shared/communication/mqtt/contracts/message-contracts.ts shared/communication/mqtt/contracts/module-contracts.ts shared/communication/mqtt/topics/index.ts shared/communication/mqtt/topics/topic-contracts.ts",
+    "lint:teacher": "tsc --noEmit --skipLibCheck --pretty false frontend/teacher-dashboard/src/app/main.ts frontend/teacher-dashboard/src/app/bootstrap.ts shared/communication/mqtt/contracts/index.ts shared/communication/mqtt/contracts/message-contracts.ts shared/communication/mqtt/contracts/module-contracts.ts shared/communication/mqtt/topics/index.ts shared/communication/mqtt/topics/topic-contracts.ts",
+    "lint:ingest": "tsc --noEmit --skipLibCheck --pretty false backend/api/src/ingestion/main.ts backend/api/src/ingestion/bootstrap.ts backend/api/src/ingestion/session-window-manager.ts backend/services/intelligence-fusion/src/index.ts backend/services/realtime-messaging/src/index.ts backend/services/persistence-history/src/index.ts shared/communication/mqtt/contracts/index.ts shared/communication/mqtt/contracts/message-contracts.ts shared/communication/mqtt/contracts/module-contracts.ts shared/communication/mqtt/topics/index.ts shared/communication/mqtt/topics/topic-contracts.ts",
+    "lint": "npm run lint:student && npm run lint:teacher && npm run lint:ingest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/education-platform.git"
+  },
+  "keywords": [
+    "education",
+    "platform",
+    "frontend",
+    "backend",
+    "real-time",
+    "AI",
+    "analytics"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@mediapipe/camera_utils": "^0.3.1675466862",
+    "@mediapipe/face_mesh": "^0.4.1633559619",
+    "@types/cors": "^2.8.19",
+    "@types/react-dom": "^19.2.3",
+    "cors": "^2.8.6",
+    "express": "^4.17.1",
+    "mongodb": "^7.1.1",
+    "mongoose": "^5.10.9",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-draggable": "^4.5.0",
+    "redux": "^4.1.0",
+    "socket.io": "^4.0.0",
+    "socket.io-client": "^4.8.3"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^7.1.4",
+    "html-webpack-plugin": "^5.6.6",
+    "jest": "^26.6.0",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.4",
+    "tsx": "^4.20.5",
+    "typescript": "^5.6.3",
+    "webpack": "^5.10.0",
+    "webpack-cli": "^7.0.2",
+    "webpack-dev-server": "^5.2.3"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  }
+}

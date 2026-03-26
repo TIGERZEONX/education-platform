@@ -1,0 +1,116 @@
+# Student Client Responsibility Map
+
+## Responsibility Map
+- Identity and participation:
+  - Confirm student real name before session activation.
+  - Enforce one live class session at a time.
+  - Track session lifecycle from not joined to clean exit.
+- Camera and visual participation service:
+  - Explain camera purpose for engagement support.
+  - Manage camera operational states and fallback modes.
+  - Keep participation available when camera is denied or unavailable.
+- Engagement sensing:
+  - Consume browser-side visual observations (face presence, head orientation, gaze focus, attentiveness).
+  - Emit stable engagement signals only, without exposing raw facial analytics to student view.
+  - Label unstable and low-confidence sensing conditions separately.
+- Explicit feedback controls:
+  - Keep confused, understood, and repeat actions continuously available.
+  - Apply cooldown and burst protection for signal quality.
+- Status and connectivity:
+  - Keep connection health first-class (healthy, unstable, reconnecting, disconnected).
+  - Buffer outbound packets during interruptions and flush on recovery.
+  - Publish reconnect transitions and status changes explicitly.
+- Student-facing laptop-first interface:
+  - Display only identity, session status, camera status, engagement transparency, feedback controls, and connection state.
+  - Communicate support-first, non-surveillance posture.
+
+## State Model
+- Session phases:
+  - not-joined
+  - joining
+  - joined
+  - live
+  - temporarily-disconnected
+  - reconnecting
+  - exited
+- Operational states:
+  - active
+  - idle
+  - reconnecting
+  - disconnected
+  - camera-off
+- Camera operational states:
+  - permission-pending
+  - camera-active
+  - camera-unavailable
+  - camera-denied
+  - camera-turned-off
+- Connection health:
+  - healthy
+  - unstable
+  - reconnecting
+  - disconnected
+- Fallback modes:
+  - full-signals
+  - camera-fallback
+  - reconnect-fallback
+
+## Journey Map
+- Step 1: not-joined
+  - Student opens laptop client and sees support-first participation guidance.
+- Step 2: identity confirmation
+  - Student confirms real name.
+- Step 3: joining -> joined -> live
+  - Student joins current class session and starts receiving live participation status.
+- Step 4: camera decision
+  - If camera access granted: full visual + feedback + status signals.
+  - If camera denied/unavailable: feedback + status remain active.
+- Step 5: live participation
+  - Background engagement service emits stable engagement signals.
+  - Student can trigger confused/understood/repeat at any time.
+- Step 6: interruption handling
+  - On unstable connectivity: enter reconnect-fallback, queue outbound packets.
+  - On recovery: reconnecting -> live and queued packets flush.
+- Step 7: clean exit
+  - Student exits session and emits session end + status transition.
+
+## Event Inventory
+- session-participation:
+  - identity confirmed
+  - joining live session
+  - session live confirmation
+- camera-state:
+  - camera unavailable
+  - camera resumed
+  - camera turned off by student
+- engagement-update:
+  - vision-derived update
+  - heartbeat engagement update
+  - direct engagement publish
+- explicit-feedback:
+  - confused
+  - understood
+  - repeat
+- status-change:
+  - active
+  - idle
+  - reconnecting
+  - disconnected
+  - camera-off
+- reconnection-transition:
+  - connection degraded
+  - packet queued
+  - reconnecting
+  - recovered and flushed
+- session-exit:
+  - clean class session exit
+
+## Fallback Hierarchy
+- Level 1: Full participation (camera and connection available)
+  - Publish engagement + feedback + status + session events in real time.
+- Level 2: Camera fallback (camera denied/unavailable/off)
+  - Continue feedback and status events; maintain session presence without visual sensing.
+- Level 3: Reconnect fallback (connection unstable/disconnected)
+  - Enter reconnecting mode.
+  - Buffer outbound events and keep student informed of degraded connectivity.
+  - Flush buffered events once health returns to healthy.
