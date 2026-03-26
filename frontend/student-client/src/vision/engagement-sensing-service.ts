@@ -22,19 +22,44 @@ export interface EngagementSensingService {
 
 export function createEngagementSensingService(): EngagementSensingService {
   let lastStableScore = 0.5;
+  let recentScores: number[] = [];
   let latestOutput: EngagementSensingOutput = {
     engagementScore: lastStableScore,
     signalQuality: "insufficient-visual-confidence",
   };
 
+  const PUSH_WINDOW = 5;
+
+  const pushRecentScore = (score: number): void => {
+    recentScores.push(score);
+    if (recentScores.length > PUSH_WINDOW) {
+      recentScores = recentScores.slice(recentScores.length - PUSH_WINDOW);
+    }
+  };
+
+  const calculateVariance = (): number => {
+    if (recentScores.length < 2) {
+      return 0;
+    }
+
+    const mean = recentScores.reduce((sum, score) => sum + score, 0) / recentScores.length;
+    const squaredDeltaSum = recentScores.reduce((sum, score) => {
+      const delta = score - mean;
+      return sum + delta * delta;
+    }, 0);
+
+    return squaredDeltaSum / recentScores.length;
+  };
+
   return {
     processObservation: (observation) => {
       const base = deriveEngagementScore(observation);
-      const lowConfidence = observation.confidence < 0.45;
+      const lowConfidence = observation.confidence < 0.6;
       const noFace = !observation.facePresent;
 
       if (lowConfidence || noFace) {
-        const decayed = Math.max(0, Number((lastStableScore * 0.95).toFixed(3)));
+        const decayed = Math.max(0, Number((lastStableScore * 0.97).toFixed(3)));
+        pushRecentScore(decayed);
         latestOutput = {
           engagementScore: decayed,
           signalQuality: "insufficient-visual-confidence",
@@ -42,8 +67,12 @@ export function createEngagementSensingService(): EngagementSensingService {
         return latestOutput;
       }
 
-      const smoothed = Number((lastStableScore * 0.6 + base * 0.4).toFixed(3));
-      const unstable = Math.abs(smoothed - lastStableScore) > 0.25;
+      const confidenceWeight = Math.min(0.5, Math.max(0.2, observation.confidence * 0.55));
+      const smoothed = Number((lastStableScore * (1 - confidenceWeight) + base * confidenceWeight).toFixed(3));
+      pushRecentScore(smoothed);
+
+      const variance = calculateVariance();
+      const unstable = Math.abs(smoothed - lastStableScore) > 0.2 || variance > 0.02;
       lastStableScore = smoothed;
 
       latestOutput = {

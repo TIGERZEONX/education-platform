@@ -11,9 +11,9 @@ export function deriveEngagementScore(frame: VisionInputFrame): number {
   }
 
   const weighted =
-    frame.headOrientationScore * 0.25 +
-    frame.gazeFocusScore * 0.35 +
-    frame.attentivenessScore * 0.4;
+    frame.headOrientationScore * 0.2 +
+    frame.gazeFocusScore * 0.45 +
+    frame.attentivenessScore * 0.35;
 
   return Math.max(0, Math.min(1, Number(weighted.toFixed(3))));
 }
