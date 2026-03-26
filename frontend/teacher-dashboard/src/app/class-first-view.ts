@@ -23,6 +23,9 @@ export interface StudentActivityView {
 export interface TeacherClassSummary {
   liveClassPulse: number | null;
   activeStudentCount: number;
+  contributingStudentCount: number;
+  missingSignalCount: number;
+  liveSignalState: "live" | "insufficient" | null;
   confusionTrend: "rising" | "stable" | "falling" | null;
   alertLevel: "green" | "yellow" | "red" | null;
   recentCognitiveInsight: string | null;
@@ -48,6 +51,9 @@ export function createInitialClassFirstViewModel(classId: string): TeacherClassF
     summary: {
       liveClassPulse: null,
       activeStudentCount: 0,
+      contributingStudentCount: 0,
+      missingSignalCount: 0,
+      liveSignalState: null,
       confusionTrend: null,
       alertLevel: null,
       recentCognitiveInsight: null,

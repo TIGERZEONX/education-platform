@@ -125,6 +125,12 @@ export function bootstrapStudentClient(
   let lastAnalysisAtMs = 0;
   let strictPipelineHealthy = true;
   let lastStrictSignalAtMs = Date.now();
+  const strictTelemetry = {
+    missingClientResult: 0,
+    strictHealthFalseTransitions: 0,
+    verificationDrifted: 0,
+    staleHeartbeatsSuppressed: 0,
+  };
   let lastStrictSignal: EngagementSignal = {
     studentId: config.studentId,
     studentName: config.studentName,
@@ -143,6 +149,20 @@ export function bootstrapStudentClient(
     timestamp: config.now ? config.now() : new Date().toISOString(),
   };
 
+  const setStrictPipelineHealthy = (next: boolean, reason: string): void => {
+    if (strictPipelineHealthy && !next) {
+      strictTelemetry.strictHealthFalseTransitions += 1;
+      console.warn("[strict-pipeline] unhealthy", {
+        reason,
+        strictHealthFalseTransitions: strictTelemetry.strictHealthFalseTransitions,
+        missingClientResult: strictTelemetry.missingClientResult,
+        verificationDrifted: strictTelemetry.verificationDrifted,
+      });
+    }
+
+    strictPipelineHealthy = next;
+  };
+
   const maybeAnalyzeWithBackend = (observation: VisualObservation): void => {
     if (analysisInFlight) {
       return;
@@ -156,7 +176,13 @@ export function bootstrapStudentClient(
 
     analysisInFlight = true;
     if (!observation.clientYoloResult) {
-      strictPipelineHealthy = false;
+      strictTelemetry.missingClientResult += 1;
+      console.warn("[strict-pipeline] observation missing clientYoloResult", {
+        missingClientResult: strictTelemetry.missingClientResult,
+        facePresent: observation.facePresent,
+        confidence: observation.confidence,
+      });
+      setStrictPipelineHealthy(false, "missing-client-yolo-result");
       analysisInFlight = false;
       return;
     }
@@ -205,12 +231,20 @@ export function bootstrapStudentClient(
         clientResult,
       })
       .then((verification) => {
-        strictPipelineHealthy = verification.verdict === "match";
+        if (verification.verdict !== "match") {
+          strictTelemetry.verificationDrifted += 1;
+          console.warn("[strict-pipeline] verification drifted", {
+            verificationDrifted: strictTelemetry.verificationDrifted,
+            scoreDelta: verification.drift.scoreDelta,
+            categoryMatch: verification.drift.categoryMatch,
+          });
+        }
+        setStrictPipelineHealthy(verification.verdict === "match", "verification-drift");
         lastAnalysisAtMs = nowMs;
       })
       .catch(() => {
         // Strict mode hard-fail: stop engagement publishing until YOLO succeeds again.
-        strictPipelineHealthy = false;
+        setStrictPipelineHealthy(false, "verification-request-failed");
       })
       .finally(() => {
         analysisInFlight = false;
@@ -224,6 +258,12 @@ export function bootstrapStudentClient(
 
     const heartbeatStaleThresholdMs = Math.max(2000, config.publishing.studentEngagementIntervalMs * 2);
     if (Date.now() - lastStrictSignalAtMs > heartbeatStaleThresholdMs) {
+      strictTelemetry.staleHeartbeatsSuppressed += 1;
+      if (strictTelemetry.staleHeartbeatsSuppressed % 5 === 0) {
+        console.info("[strict-pipeline] stale heartbeat suppressed", {
+          staleHeartbeatsSuppressed: strictTelemetry.staleHeartbeatsSuppressed,
+        });
+      }
       return;
     }
 

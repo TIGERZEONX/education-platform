@@ -39,8 +39,15 @@ export default function App({ latestView, connected, lastUpdated }: AppProps) {
   const pulse = latestView.classPulse.liveClassPulse;
   const health = latestView.systemHealth;
   const alert = latestView.alerting;
+  const liveSignalState = latestView.classPulse.liveSignalState;
+  const pulseTimestampMs = latestView.sessionAwareness.lastUpdatedAt
+    ? Date.parse(latestView.sessionAwareness.lastUpdatedAt)
+    : Number.NaN;
+  const pulseAgeMs = Number.isFinite(pulseTimestampMs) ? Math.max(0, Date.now() - pulseTimestampMs) : Number.POSITIVE_INFINITY;
+  const isStaleLiveSignal = pulseAgeMs > 15000;
+  const hasLivePulse = pulse !== null && liveSignalState === "live" && !isStaleLiveSignal;
 
-  const pulseColor = pulse !== null
+  const pulseColor = hasLivePulse
     ? pulse > 0.7 ? "var(--accent-green)" : pulse > 0.4 ? "var(--accent-yellow)" : "var(--accent-red)"
     : "var(--text-secondary)";
 
@@ -64,6 +71,12 @@ export default function App({ latestView, connected, lastUpdated }: AppProps) {
           </div>
           <div style={{ fontSize: "0.75rem", color: "var(--text-secondary)" }}>
             {latestView.classPulse.activeStudentCount} active student{latestView.classPulse.activeStudentCount !== 1 ? "s" : ""}
+          </div>
+          <div style={{ fontSize: "0.7rem", color: "var(--text-secondary)" }}>
+            {latestView.classPulse.contributingStudentCount} contributing · {latestView.classPulse.missingSignalCount} missing signal
+          </div>
+          <div style={{ fontSize: "0.7rem", color: isStaleLiveSignal ? "var(--accent-yellow)" : "var(--text-secondary)" }}>
+            Live feed: {isStaleLiveSignal ? "stale" : "fresh"}
           </div>
           {lastUpdated && (
             <div style={{ fontSize: "0.7rem", color: "var(--text-secondary)" }}>
@@ -109,16 +122,16 @@ export default function App({ latestView, connected, lastUpdated }: AppProps) {
                   fill="none"
                   stroke={pulseColor}
                   strokeWidth="14"
-                  strokeDasharray={`${(pulse ?? 0) * 345.6} 345.6`}
+                  strokeDasharray={`${(hasLivePulse ? pulse : 0) * 345.6} 345.6`}
                   strokeDashoffset="86.4"
                   strokeLinecap="round"
                   style={{ transition: "stroke-dasharray 1s ease, stroke 0.5s ease" }}
                 />
                 <text x="70" y="66" textAnchor="middle" fill={pulseColor} fontSize="24" fontWeight="bold">
-                  {pulse !== null ? `${Math.round(pulse * 100)}%` : "--"}
+                  {hasLivePulse ? `${Math.round(pulse * 100)}%` : "--"}
                 </text>
                 <text x="70" y="84" textAnchor="middle" fill="var(--text-secondary)" fontSize="11">
-                  engagement
+                  {hasLivePulse ? "engagement" : isStaleLiveSignal ? "signal stale" : "signal unavailable"}
                 </text>
               </svg>
               <div style={{ marginTop: "0.5rem", fontSize: "0.85rem", color: "var(--text-secondary)" }}>
@@ -131,6 +144,13 @@ export default function App({ latestView, connected, lastUpdated }: AppProps) {
               <div style={{ fontSize: "0.8rem", color: "var(--text-secondary)", marginTop: "0.25rem" }}>
                 Signal confidence: <strong>{health.confidence}</strong>
               </div>
+              {(liveSignalState !== "live" || isStaleLiveSignal) && (
+                <div style={{ fontSize: "0.78rem", color: "var(--accent-yellow)", marginTop: "0.25rem" }}>
+                  {isStaleLiveSignal
+                    ? "Live signal is stale; waiting for fresh YOLO-driven updates."
+                    : "Insufficient live engagement signals right now."}
+                </div>
+              )}
             </div>
           </GlassCard>
 

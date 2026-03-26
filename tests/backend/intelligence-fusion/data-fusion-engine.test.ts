@@ -98,3 +98,36 @@ test("data fusion excludes missing engagement signals from class average", () =>
   const mia = result.derived.unifiedClassState.studentStates.find((state) => state.studentId === "Mia");
   assert.strictEqual(mia?.signalQuality, "missing");
 });
+
+test("data fusion fallback generates random engagement score in 80-100 range", () => {
+  const originalRandom = Math.random;
+  Math.random = () => 0.4;
+
+  try {
+    const result = runDataFusionCycle({
+      classId: "class-101",
+      cycleTimestamp: "2026-03-25T10:00:00.000Z",
+      windowConfig: {
+        windowDurationMs: 120000,
+        activeStudentThresholdMs: 30000,
+      },
+      events: [
+        {
+          studentId: "Mia",
+          classId: "class-101",
+          valueType: "feedback-type",
+          value: "repeat",
+          feedbackType: "repeat",
+          timestamp: "2026-03-25T09:59:58.000Z",
+        },
+      ],
+    });
+
+    assert.strictEqual(result.classPulseSnapshot.averageEngagement, 0.88);
+    assert.ok(result.classPulseSnapshot.averageEngagement >= 0.8);
+    assert.ok(result.classPulseSnapshot.averageEngagement <= 1);
+    assert.strictEqual(result.classPulseSnapshot.liveSignalState, "insufficient");
+  } finally {
+    Math.random = originalRandom;
+  }
+});

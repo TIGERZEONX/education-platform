@@ -96,6 +96,30 @@ function LiveFaceTracker() {
     let isMounted = true;
     let consecutiveDetections = 0;
     let consecutiveMisses = 0;
+    const publishTelemetry = {
+      acceptedFrames: 0,
+      coalescedWhileBusy: 0,
+      yoloRuns: 0,
+      publishedEvents: 0,
+      yoloFailures: 0,
+    };
+    let nextTelemetryLogAtMs = Date.now() + 5000;
+
+    const maybeLogTelemetry = (): void => {
+      const nowMs = Date.now();
+      if (nowMs < nextTelemetryLogAtMs) {
+        return;
+      }
+
+      console.info("[strict-vision-loop]", {
+        acceptedFrames: publishTelemetry.acceptedFrames,
+        coalescedWhileBusy: publishTelemetry.coalescedWhileBusy,
+        yoloRuns: publishTelemetry.yoloRuns,
+        publishedEvents: publishTelemetry.publishedEvents,
+        yoloFailures: publishTelemetry.yoloFailures,
+      });
+      nextTelemetryLogAtMs = nowMs + 5000;
+    };
 
     const clientYolo = createClientYoloService({
       faceModelUrl: "/models/yolov8-face.onnx",
@@ -106,9 +130,12 @@ function LiveFaceTracker() {
     const publishWithClientYolo = async (
       input: Parameters<typeof context.publishVisualObservation>[0],
     ): Promise<void> => {
+      publishTelemetry.acceptedFrames += 1;
       if (yoloBusy) {
         // Keep only the freshest observation to avoid publish starvation while YOLO is busy.
+        publishTelemetry.coalescedWhileBusy += 1;
         pendingObservation = input;
+        maybeLogTelemetry();
         return;
       }
 
@@ -117,6 +144,7 @@ function LiveFaceTracker() {
         let nextObservation: Parameters<typeof context.publishVisualObservation>[0] | null = input;
 
         while (nextObservation && isMounted) {
+          publishTelemetry.yoloRuns += 1;
           const clientYoloResult = await clientYolo.analyze({
             faceCropDataUrl: nextObservation.faceCropDataUrl,
             confidence: nextObservation.confidence,
@@ -128,12 +156,16 @@ function LiveFaceTracker() {
             ...nextObservation,
             clientYoloResult,
           });
+          publishTelemetry.publishedEvents += 1;
+          maybeLogTelemetry();
 
           nextObservation = pendingObservation;
           pendingObservation = null;
         }
       } catch {
+        publishTelemetry.yoloFailures += 1;
         pendingObservation = null;
+        maybeLogTelemetry();
         if (isMounted) {
           setErrorMsg("Client YOLO unavailable. Live engagement is paused.");
           setIsActive(false);

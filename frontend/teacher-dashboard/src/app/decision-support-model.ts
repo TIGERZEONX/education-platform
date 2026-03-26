@@ -54,6 +54,9 @@ export interface TeacherClassDecisionSupportView {
   classPulse: {
     liveClassPulse: number | null;
     activeStudentCount: number;
+    contributingStudentCount: number;
+    missingSignalCount: number;
+    liveSignalState: "live" | "insufficient" | null;
     alertLevel: "green" | "yellow" | "red" | null;
   };
   alerting: TeacherAlertView;
@@ -293,6 +296,9 @@ export function buildTeacherDecisionSupportView(
     classPulse: {
       liveClassPulse: viewModel.summary.liveClassPulse,
       activeStudentCount: viewModel.summary.activeStudentCount,
+      contributingStudentCount: viewModel.summary.contributingStudentCount,
+      missingSignalCount: viewModel.summary.missingSignalCount,
+      liveSignalState: viewModel.summary.liveSignalState,
       alertLevel: viewModel.summary.alertLevel,
     },
     alerting: {

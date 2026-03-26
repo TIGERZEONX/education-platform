@@ -436,6 +436,13 @@ function ExtensionTeacherApp({ onClose }: { onClose: () => void }) {
     mediaRecorderRef.current?.stop();
   };
 
+  const decisionTimestampMs = decisionView?.sessionAwareness.lastUpdatedAt
+    ? Date.parse(decisionView.sessionAwareness.lastUpdatedAt)
+    : Number.NaN;
+  const staleTeacherLiveSignal = Number.isFinite(decisionTimestampMs)
+    ? Date.now() - decisionTimestampMs > 15000
+    : false;
+
   const tabStyle = (active: boolean) => ({
     flex: 1, padding: "6px 0", background: active ? "rgba(190,24,93,0.3)" : "transparent",
     border: "none", color: active ? "white" : "#9ca3af", cursor: "pointer", fontSize: "12px", fontWeight: active ? 600 : 400, borderRadius: "6px"
@@ -489,8 +496,21 @@ function ExtensionTeacherApp({ onClose }: { onClose: () => void }) {
             {activeTab === "students" && (
               <div style={{ padding: "12px", maxHeight: "70vh", overflowY: "auto" }}>
                 <div style={{ fontSize: "12px", fontWeight: 600, color: "#f472b6", marginBottom: "10px" }}>
-                  Live Engagement — All Students {decisionView ? `(${decisionView.classPulse.activeStudentCount} active)` : ""}
+                  Live Engagement — All Students
+                  {decisionView
+                    ? ` (${decisionView.classPulse.activeStudentCount} active, ${decisionView.classPulse.contributingStudentCount} contributing, ${decisionView.classPulse.missingSignalCount} missing)`
+                    : ""}
                 </div>
+                {decisionView && decisionView.classPulse.liveSignalState !== "live" && (
+                  <div style={{ fontSize: "11px", color: "#fbbf24", marginBottom: "10px" }}>
+                    Live pulse is currently insufficient due to missing engagement signals.
+                  </div>
+                )}
+                {decisionView && staleTeacherLiveSignal && (
+                  <div style={{ fontSize: "11px", color: "#fbbf24", marginBottom: "10px" }}>
+                    Live pulse is stale; waiting for fresh YOLO-driven updates.
+                  </div>
+                )}
                 <StudentEngagementList decisionView={decisionView} />
               </div>
             )}

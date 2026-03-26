@@ -110,11 +110,17 @@ export interface ClassPulseSnapshot {
     averageEngagement: number;
     confusionRate: number;
     activeStudentCount: number;
+    contributingStudentCount: number;
+    missingSignalCount: number;
+    liveSignalState: "live" | "insufficient";
     alertLevel: AlertLevel;
   };
   averageEngagement: number;
   confusionRate: number;
   activeStudentCount: number;
+  contributingStudentCount: number;
+  missingSignalCount: number;
+  liveSignalState: "live" | "insufficient";
   alertLevel: AlertLevel;
   windowStart: string;
   windowEnd: string;

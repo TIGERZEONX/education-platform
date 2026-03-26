@@ -48,6 +48,14 @@ export function bootstrapTeacherDashboard(
 ): TeacherDashboardBootstrapContext {
   const topics = buildTopicContracts(config);
   const viewModel = createInitialClassFirstViewModel(config.classId);
+  const telemetry = {
+    pulsesReceived: 0,
+    livePulses: 0,
+    insufficientPulses: 0,
+    stalePulses: 0,
+    maxInterPulseGapMs: 0,
+    lastPulseAtMs: 0,
+  };
   const clientIdentity: MqttClientIdentity = {
     role: "teacher",
     clientId: config.clientId,
@@ -73,7 +81,42 @@ export function bootstrapTeacherDashboard(
       return consumeClassEnvelope(viewModel, topic, envelope);
     },
     onClassPulse: (snapshot) => {
+      const nowMs = Date.now();
+      const pulseTimestampMs = Date.parse(snapshot.timestamp);
+      const pulseAgeMs = Number.isFinite(pulseTimestampMs) ? Math.max(0, nowMs - pulseTimestampMs) : -1;
+      telemetry.pulsesReceived += 1;
+      if (snapshot.liveSignalState === "live") {
+        telemetry.livePulses += 1;
+      } else {
+        telemetry.insufficientPulses += 1;
+      }
+      if (pulseAgeMs >= 15000) {
+        telemetry.stalePulses += 1;
+      }
+      if (telemetry.lastPulseAtMs > 0) {
+        telemetry.maxInterPulseGapMs = Math.max(telemetry.maxInterPulseGapMs, nowMs - telemetry.lastPulseAtMs);
+      }
+      telemetry.lastPulseAtMs = nowMs;
+
+      if (telemetry.pulsesReceived % 5 === 0) {
+        console.info("[teacher-live-freshness]", {
+          classId: config.classId,
+          pulsesReceived: telemetry.pulsesReceived,
+          livePulses: telemetry.livePulses,
+          insufficientPulses: telemetry.insufficientPulses,
+          stalePulses: telemetry.stalePulses,
+          lastPulseAgeMs: pulseAgeMs,
+          maxInterPulseGapMs: telemetry.maxInterPulseGapMs,
+        });
+      }
+
       viewModel.classPulse = snapshot;
+      viewModel.summary.liveClassPulse = snapshot.averageEngagement;
+      viewModel.summary.activeStudentCount = snapshot.activeStudentCount;
+      viewModel.summary.contributingStudentCount = snapshot.contributingStudentCount;
+      viewModel.summary.missingSignalCount = snapshot.missingSignalCount;
+      viewModel.summary.liveSignalState = snapshot.liveSignalState;
+      viewModel.summary.alertLevel = snapshot.alertLevel;
       viewModel.lastUpdatedAt = snapshot.timestamp;
     },
     onCognitiveMap: (snapshot) => {

@@ -146,6 +146,11 @@ export function isClassPulseSnapshot(input: unknown): input is ClassPulseSnapsho
     return false;
   }
 
+  const signalStateValid = input.liveSignalState === "live" || input.liveSignalState === "insufficient";
+  const nestedSignalStateValid =
+    isRecord(input.value) &&
+    (input.value.liveSignalState === "live" || input.value.liveSignalState === "insufficient");
+
   return (
     isNonEmptyString(input.classId) &&
     input.valueType === "class-pulse" &&
@@ -155,16 +160,33 @@ export function isClassPulseSnapshot(input: unknown): input is ClassPulseSnapsho
     typeof input.value.activeStudentCount === "number" &&
     input.value.activeStudentCount >= 0 &&
     Number.isInteger(input.value.activeStudentCount) &&
+    typeof input.value.contributingStudentCount === "number" &&
+    input.value.contributingStudentCount >= 0 &&
+    Number.isInteger(input.value.contributingStudentCount) &&
+    typeof input.value.missingSignalCount === "number" &&
+    input.value.missingSignalCount >= 0 &&
+    Number.isInteger(input.value.missingSignalCount) &&
+    nestedSignalStateValid &&
     isAlertLevel(input.value.alertLevel) &&
     isBetweenZeroAndOne(input.averageEngagement) &&
     isBetweenZeroAndOne(input.confusionRate) &&
     typeof input.activeStudentCount === "number" &&
     input.activeStudentCount >= 0 &&
     Number.isInteger(input.activeStudentCount) &&
+    typeof input.contributingStudentCount === "number" &&
+    input.contributingStudentCount >= 0 &&
+    Number.isInteger(input.contributingStudentCount) &&
+    typeof input.missingSignalCount === "number" &&
+    input.missingSignalCount >= 0 &&
+    Number.isInteger(input.missingSignalCount) &&
+    signalStateValid &&
     isAlertLevel(input.alertLevel) &&
     input.value.averageEngagement === input.averageEngagement &&
     input.value.confusionRate === input.confusionRate &&
     input.value.activeStudentCount === input.activeStudentCount &&
+    input.value.contributingStudentCount === input.contributingStudentCount &&
+    input.value.missingSignalCount === input.missingSignalCount &&
+    input.value.liveSignalState === input.liveSignalState &&
     input.value.alertLevel === input.alertLevel &&
     isIsoTimestamp(input.windowStart) &&
     isIsoTimestamp(input.windowEnd) &&

@@ -1331,3 +1331,1767 @@
 [2026-03-26T06:03:53.836Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
 [2026-03-26T06:03:53.836Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
 [2026-03-26T06:03:53.836Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:03:57.836Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:03:57.836Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:03:57.837Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:03:57.837Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:03:57.837Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:03:57.837Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:04:01.836Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:04:01.837Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:04:01.837Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:04:01.837Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:04:01.837Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:04:01.838Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:04:05.837Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:04:05.837Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:04:05.838Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:04:05.838Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:04:05.839Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:04:05.839Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:04:09.837Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:04:09.838Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:04:09.838Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:04:09.839Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:04:09.839Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:04:09.839Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:04:13.838Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:04:13.838Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:04:13.839Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:04:13.839Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:04:13.839Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:04:13.839Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:04:17.838Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:04:17.839Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:04:17.840Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:04:17.840Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:04:17.840Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:04:17.840Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:04:21.838Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:04:21.839Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:04:21.840Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:04:21.840Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:04:21.840Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:04:21.840Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:04:25.840Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:04:25.840Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:04:25.841Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:04:25.841Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:04:25.841Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:04:25.842Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:04:29.841Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:04:29.842Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:04:29.842Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:04:29.842Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:04:29.843Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:04:29.843Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:04:33.841Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:04:33.842Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:04:33.843Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:04:33.843Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:04:33.843Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:04:33.843Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:04:37.843Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:04:37.843Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:04:37.844Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:04:37.844Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:04:37.844Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:04:37.844Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:04:41.843Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:04:41.843Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:04:41.843Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:04:41.843Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:04:41.843Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:04:41.843Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:04:45.844Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:04:45.845Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:04:45.846Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:04:45.846Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:04:45.846Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:04:45.846Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:04:49.845Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:04:49.846Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:04:49.846Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:04:49.847Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:04:49.847Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:04:49.847Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:04:53.846Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:04:53.847Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:04:53.847Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:04:53.847Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:04:53.848Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:04:53.848Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:04:57.848Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:04:57.848Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:04:57.849Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:04:57.849Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:04:57.849Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:04:57.849Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:05:01.848Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:05:01.849Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:05:01.849Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:05:01.849Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:05:01.850Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:05:01.850Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:05:05.849Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:05:05.849Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:05:05.850Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:05:05.850Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:05:05.850Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:05:05.850Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:05:09.850Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:05:09.851Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:05:09.851Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:05:09.852Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:05:09.852Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:05:09.852Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:05:13.852Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:05:13.852Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:05:13.853Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:05:13.853Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:05:13.853Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:05:13.854Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:05:17.853Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:05:17.853Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:05:17.854Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:05:17.854Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:05:17.854Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:05:17.854Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:05:21.853Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:05:21.853Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:05:21.854Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:05:21.854Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:05:21.854Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:05:21.854Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:05:25.854Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:05:25.854Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:05:25.855Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:05:25.855Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:05:25.855Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:05:25.855Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:05:29.855Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:05:29.856Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:05:29.857Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:05:29.857Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:05:29.857Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:05:29.857Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:05:33.856Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:05:33.857Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:05:33.858Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:05:33.858Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:05:33.858Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:05:33.858Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:05:37.856Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:05:37.857Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:05:37.858Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:05:37.858Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:05:37.858Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:05:37.858Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:05:41.857Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:05:41.858Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:05:41.858Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:05:41.859Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:05:41.859Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:05:41.859Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:05:45.858Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:05:45.858Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:05:45.859Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:05:45.859Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:05:45.859Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:05:45.859Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:05:49.859Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:05:49.859Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:05:49.860Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:05:49.860Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:05:49.861Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:05:49.861Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:05:53.860Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:05:53.860Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:05:53.861Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:05:53.861Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:05:53.862Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:05:53.862Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:05:57.860Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:05:57.860Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:05:57.861Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:05:57.861Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:05:57.862Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:05:57.862Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:06:01.861Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:06:01.861Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:06:01.862Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:06:01.862Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:06:01.863Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:06:01.863Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:06:05.861Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:06:05.862Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:06:05.863Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:06:05.863Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:06:05.863Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:06:05.863Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:06:09.861Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:06:09.862Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:06:09.862Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:06:09.862Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:06:09.863Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:06:09.863Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:06:13.863Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:06:13.863Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:06:13.864Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:06:13.864Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:06:13.864Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:06:13.864Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:06:17.862Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:06:17.863Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:06:17.864Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:06:17.864Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:06:17.864Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:06:17.865Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:06:21.863Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:06:21.864Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:06:21.865Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:06:21.865Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:06:21.865Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:06:21.865Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:06:25.864Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:06:25.864Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:06:25.865Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:06:25.865Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:06:25.866Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:06:25.866Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:06:29.865Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:06:29.865Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:06:29.866Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:06:29.866Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:06:29.866Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:06:29.866Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:06:33.866Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:06:33.867Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:06:33.867Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:06:33.868Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:06:33.868Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:06:33.868Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:06:37.867Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:06:37.867Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:06:37.868Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:06:37.868Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:06:37.869Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:06:37.869Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:06:41.868Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:06:41.869Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:06:41.869Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:06:41.869Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:06:41.870Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:06:41.870Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:06:45.868Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:06:45.869Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:06:45.869Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:06:45.870Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:06:45.870Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:06:45.870Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:06:49.870Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:06:49.870Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:06:49.871Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:06:49.871Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:06:49.871Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:06:49.871Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:06:53.871Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:06:53.871Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:06:53.872Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:06:53.872Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:06:53.872Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:06:53.872Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:06:57.872Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:06:57.872Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:06:57.873Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:06:57.873Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:06:57.873Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:06:57.873Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:07:01.872Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:07:01.873Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:07:01.874Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:07:01.874Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:07:01.874Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:07:01.874Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:07:05.873Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:07:05.873Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:07:05.874Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:07:05.874Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:07:05.874Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:07:05.874Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:07:09.874Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:07:09.874Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:07:09.875Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:07:09.875Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:07:09.875Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:07:09.875Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:07:13.874Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:07:13.875Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:07:13.876Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:07:13.876Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:07:13.876Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:07:13.876Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:07:17.875Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:07:17.876Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:07:17.877Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:07:17.877Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:07:17.877Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:07:17.877Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:07:21.875Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:07:21.875Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:07:21.876Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:07:21.876Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:07:21.876Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:07:21.876Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:07:25.875Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:07:25.876Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:07:25.876Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:07:25.876Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:07:25.877Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:07:25.877Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:07:29.876Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:07:29.876Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:07:29.877Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:07:29.877Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:07:29.877Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:07:29.877Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:07:33.878Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:07:33.878Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:07:33.879Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:07:33.879Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:07:33.879Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:07:33.879Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:07:37.878Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:07:37.879Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:07:37.880Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:07:37.880Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:07:37.880Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:07:37.880Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:07:41.879Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:07:41.880Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:07:41.880Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:07:41.881Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:07:41.881Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:07:41.881Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:07:45.880Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:07:45.881Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:07:45.881Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:07:45.881Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:07:45.881Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:07:45.881Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:07:49.882Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:07:49.882Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:07:49.883Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:07:49.883Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:07:49.883Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:07:49.883Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:07:53.883Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:07:53.883Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:07:53.884Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:07:53.884Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:07:53.884Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:07:53.884Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:07:57.884Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:07:57.884Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:07:57.885Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:07:57.885Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:07:57.885Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:07:57.885Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:08:01.886Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:08:01.887Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:08:01.888Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:08:01.888Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:08:01.888Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:08:01.889Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:08:05.886Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:08:05.886Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:08:05.887Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:08:05.887Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:08:05.887Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:08:05.887Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:08:09.887Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:08:09.888Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:08:09.888Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:08:09.888Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:08:09.888Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:08:09.888Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:08:13.888Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:08:13.888Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:08:13.888Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:08:13.888Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:08:13.888Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:08:13.889Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:08:17.887Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:08:17.888Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:08:17.889Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:08:17.889Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:08:17.889Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:08:17.889Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:08:21.888Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:08:21.889Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:08:21.889Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:08:21.889Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:08:21.890Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:08:21.890Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:08:25.890Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:08:25.890Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:08:25.891Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:08:25.891Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:08:25.891Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:08:25.891Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:08:29.889Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:08:29.890Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:08:29.890Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:08:29.891Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:08:29.891Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:08:29.891Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:08:33.890Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:08:33.891Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:08:33.892Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:08:33.892Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:08:33.893Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:08:33.893Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:08:37.891Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:08:37.892Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:08:37.892Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:08:37.893Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:08:37.893Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:08:37.893Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:08:41.893Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:08:41.894Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:08:41.895Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:08:41.895Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:08:41.895Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:08:41.895Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:08:45.893Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:08:45.894Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:08:45.894Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:08:45.894Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:08:45.895Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:08:45.895Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:08:49.894Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:08:49.895Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:08:49.895Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:08:49.895Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:08:49.895Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:08:49.895Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:08:53.896Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:08:53.896Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:08:53.896Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:08:53.897Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:08:53.897Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:08:53.897Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:08:57.896Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:08:57.896Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:08:57.897Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:08:57.897Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:08:57.897Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:08:57.897Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:09:01.897Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:09:01.898Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:09:01.899Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:09:01.899Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:09:01.899Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:09:01.899Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:09:05.897Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:09:05.898Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:09:05.899Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:09:05.899Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:09:05.899Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:09:05.899Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:09:09.898Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:09:09.899Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:09:09.899Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:09:09.899Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:09:09.900Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:09:09.900Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:09:13.900Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:09:13.901Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:09:13.902Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:09:13.902Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:09:13.903Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:09:13.903Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:09:17.901Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:09:17.901Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:09:17.902Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:09:17.903Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:09:17.903Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:09:17.903Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:09:21.902Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:09:21.902Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:09:21.903Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:09:21.903Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:09:21.903Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:09:21.903Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:09:25.902Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:09:25.903Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:09:25.904Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:09:25.904Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:09:25.904Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:09:25.904Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:09:29.903Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:09:29.903Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:09:29.903Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:09:29.903Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:09:29.904Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:09:29.904Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:09:33.904Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:09:33.904Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:09:33.904Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:09:33.904Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:09:33.904Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:09:33.904Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:09:37.905Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:09:37.905Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:09:37.906Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:09:37.906Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:09:37.907Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:09:37.907Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:09:41.905Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:09:41.905Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:09:41.905Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:09:41.906Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:09:41.906Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:09:41.906Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:09:45.907Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:09:45.907Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:09:45.907Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:09:45.907Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:09:45.907Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:09:45.908Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:09:49.908Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:09:49.908Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:09:49.909Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:09:49.909Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:09:49.909Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:09:49.909Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:09:53.909Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:09:53.910Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:09:53.910Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:09:53.910Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:09:53.910Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:09:53.910Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:09:57.910Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:09:57.910Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:09:57.911Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:09:57.911Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:09:57.911Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:09:57.911Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:10:01.910Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:10:01.911Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:10:01.911Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:10:01.911Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:10:01.911Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:10:01.911Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:10:05.911Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:10:05.912Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:10:05.913Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:10:05.913Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:10:05.913Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:10:05.913Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:10:09.912Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:10:09.912Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:10:09.913Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:10:09.913Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:10:09.913Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:10:09.913Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:10:13.913Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:10:13.913Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:10:13.914Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:10:13.914Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:10:13.914Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:10:13.914Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:10:17.913Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:10:17.914Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:10:17.914Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:10:17.914Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:10:17.914Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:10:17.914Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:10:21.914Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:10:21.914Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:10:21.915Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:10:21.915Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:10:21.915Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:10:21.915Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:10:25.915Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:10:25.915Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:10:25.916Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:10:25.916Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:10:25.916Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:10:25.916Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:10:29.917Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:10:29.917Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:10:29.917Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:10:29.917Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:10:29.918Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:10:29.918Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:10:33.917Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:10:33.919Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:10:33.919Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:10:33.919Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:10:33.920Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:10:33.920Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:10:37.918Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:10:37.918Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:10:37.918Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:10:37.918Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:10:37.918Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:10:37.918Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:10:41.920Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:10:41.920Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:10:41.921Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:10:41.921Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:10:41.922Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:10:41.922Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:10:45.920Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:10:45.921Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:10:45.922Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:10:45.922Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:10:45.922Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:10:45.922Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:10:49.921Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:10:49.921Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:10:49.922Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:10:49.922Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:10:49.922Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:10:49.922Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:10:53.922Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:10:53.923Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:10:53.923Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:10:53.925Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:10:53.925Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:10:53.926Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:10:57.923Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:10:57.923Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:10:57.923Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:10:57.923Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:10:57.924Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:10:57.924Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:11:01.923Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:11:01.925Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:11:01.925Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:11:01.925Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:11:01.925Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:11:01.925Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:11:05.924Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:11:05.925Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:11:05.925Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:11:05.925Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:11:05.925Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:11:05.925Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:11:09.925Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:11:09.927Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:11:09.927Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:11:09.928Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:11:09.928Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:11:09.928Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:11:13.925Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:11:13.925Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:11:13.926Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:11:13.926Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:11:13.926Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:11:13.926Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:11:17.926Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:11:17.926Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:11:17.926Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:11:17.926Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:11:17.926Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:11:17.927Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:11:21.927Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:11:21.928Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:11:21.928Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:11:21.928Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:11:21.928Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:11:21.928Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:11:25.928Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:11:25.929Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:11:25.930Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:11:25.930Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:11:25.930Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:11:25.930Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:11:29.930Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:11:29.930Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:11:29.931Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:11:29.931Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:11:29.931Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:11:29.931Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:11:33.930Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:11:33.930Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:11:33.930Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:11:33.930Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:11:33.930Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:11:33.930Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:11:37.931Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:11:37.932Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:11:37.932Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:11:37.932Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:11:37.932Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:11:37.932Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:11:41.933Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:11:41.933Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:11:41.934Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:11:41.934Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:11:41.934Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:11:41.934Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:11:45.934Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:11:45.935Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:11:45.935Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:11:45.936Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:11:45.936Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:11:45.936Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:11:49.934Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:11:49.935Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:11:49.935Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:11:49.935Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:11:49.936Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:11:49.936Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:11:53.935Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:11:53.936Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:11:53.936Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:11:53.936Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:11:53.936Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:11:53.936Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:11:57.936Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:11:57.936Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:11:57.937Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:11:57.938Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:11:57.938Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:11:57.938Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:12:01.936Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:12:01.936Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:12:01.937Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:12:01.937Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:12:01.937Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:12:01.937Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:12:05.937Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:12:05.938Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:12:05.939Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:12:05.939Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:12:05.939Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:12:05.939Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:12:09.937Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:12:09.938Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:12:09.938Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:12:09.939Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:12:09.939Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:12:09.939Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:12:13.938Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:12:13.940Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:12:13.940Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:12:13.940Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:12:13.940Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:12:13.940Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:12:17.940Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:12:17.941Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:12:17.941Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:12:17.941Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:12:17.942Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:12:17.942Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:12:21.940Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:12:21.941Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:12:21.941Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:12:21.942Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:12:21.942Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:12:21.942Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:12:25.941Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:12:25.942Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:12:25.942Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:12:25.943Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:12:25.943Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:12:25.943Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:12:29.943Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:12:29.943Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:12:29.944Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:12:29.944Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:12:29.944Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:12:29.944Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:12:33.944Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:12:33.944Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:12:33.945Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:12:33.945Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:12:33.945Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:12:33.945Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:12:37.945Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:12:37.946Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:12:37.948Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:12:37.948Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:12:37.949Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:12:37.950Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:12:41.946Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:12:41.946Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:12:41.947Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:12:41.947Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:12:41.947Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:12:41.947Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:12:45.947Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:12:45.947Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:12:45.948Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:12:45.949Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:12:45.949Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:12:45.949Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:12:49.951Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:12:49.952Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:12:49.953Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:12:49.953Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:12:49.953Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:12:49.953Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:12:53.951Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:12:53.951Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:12:53.952Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:12:53.952Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:12:53.952Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:12:53.952Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:12:57.951Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:12:57.951Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:12:57.952Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:12:57.952Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:12:57.952Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:12:57.952Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:13:01.952Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:13:01.953Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:13:01.954Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:13:01.954Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:13:01.954Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:13:01.954Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:13:05.953Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:13:05.954Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:13:05.954Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:13:05.954Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:13:05.955Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:13:05.955Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:13:09.954Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:13:09.954Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:13:09.955Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:13:09.956Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:13:09.956Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:13:09.956Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:13:13.955Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:13:13.956Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:13:13.956Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:13:13.956Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:13:13.956Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:13:13.957Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:13:17.957Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:13:17.957Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:13:17.958Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:13:17.958Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:13:17.958Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:13:17.958Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:13:21.958Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:13:21.958Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:13:21.959Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:13:21.959Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:13:21.959Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:13:21.959Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:13:25.960Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:13:25.960Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:13:25.961Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:13:25.961Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:13:25.961Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:13:25.961Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:13:29.960Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:13:29.961Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:13:29.961Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:13:29.962Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:13:29.962Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:13:29.962Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:13:33.961Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:13:33.961Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:13:33.962Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:13:33.962Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:13:33.962Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:13:33.962Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:13:37.962Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:13:37.962Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:13:37.963Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:13:37.963Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:13:37.963Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:13:37.963Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:13:41.965Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:13:41.966Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:13:41.967Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:13:41.967Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:13:41.968Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:13:41.968Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:13:45.964Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:13:45.965Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:13:45.965Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:13:45.966Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:13:45.966Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:13:45.966Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:13:49.966Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:13:49.966Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:13:49.967Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:13:49.967Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:13:49.967Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:13:49.967Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:13:53.965Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:13:53.966Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:13:53.966Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:13:53.966Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:13:53.967Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:13:53.967Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:13:57.966Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:13:57.967Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:13:57.967Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:13:57.967Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:13:57.967Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:13:57.967Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:14:01.968Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:14:01.968Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:14:01.969Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:14:01.969Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:14:01.969Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:14:01.970Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:14:05.967Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:14:05.967Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:14:05.967Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:14:05.968Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:14:05.968Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:14:05.968Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:14:09.968Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:14:09.970Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:14:09.970Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:14:09.970Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:14:09.971Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:14:09.971Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:14:13.968Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:14:13.969Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:14:13.970Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:14:13.970Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:14:13.970Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:14:13.970Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:14:17.969Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:14:17.970Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:14:17.970Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:14:17.970Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:14:17.970Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:14:17.970Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:14:21.970Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:14:21.971Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:14:21.971Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:14:21.972Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:14:21.972Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:14:21.972Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:14:25.972Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:14:25.973Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:14:25.973Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:14:25.974Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:14:25.974Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:14:25.974Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:14:29.973Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:14:29.974Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:14:29.975Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:14:29.975Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:14:29.976Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:14:29.976Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:14:33.973Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:14:33.973Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:14:33.974Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:14:33.974Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:14:33.974Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:14:33.974Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:14:37.974Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:14:37.975Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:14:37.975Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:14:37.975Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:14:37.975Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:14:37.975Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:14:41.977Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:14:41.977Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:14:41.977Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:14:41.978Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:14:41.978Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:14:41.978Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:14:45.979Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:14:45.980Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:14:45.981Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:14:45.982Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:14:45.982Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:14:45.982Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:14:49.980Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:14:49.981Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:14:49.981Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:14:49.981Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:14:49.981Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:14:49.981Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:14:53.981Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:14:53.981Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:14:53.982Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:14:53.982Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:14:53.982Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:14:53.982Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:14:57.984Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:14:57.984Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:14:57.985Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:14:57.985Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:14:57.985Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:14:57.985Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:15:01.984Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:15:01.986Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:15:01.990Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:15:01.990Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:15:01.991Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:15:01.991Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:15:05.986Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:15:05.986Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:15:05.987Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:15:05.987Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:15:05.987Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:15:05.987Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:15:09.988Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:15:09.990Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:15:09.990Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:15:09.990Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:15:09.991Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:15:09.991Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:15:13.988Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:15:13.989Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:15:13.990Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:15:13.990Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:15:13.991Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:15:13.991Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:15:17.988Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:15:17.989Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:15:17.989Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:15:17.989Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:15:17.989Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:15:17.989Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:15:21.990Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:15:21.990Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:15:21.990Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:15:21.990Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:15:21.990Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:15:21.990Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:15:25.991Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:15:25.992Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:15:25.992Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:15:25.993Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:15:25.993Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:15:25.993Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:15:29.991Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:15:29.992Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:15:29.993Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:15:29.994Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:15:29.994Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:15:29.994Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:15:33.992Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:15:33.992Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:15:33.992Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:15:33.992Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:15:33.992Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:15:33.992Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:15:37.993Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:15:37.993Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:15:37.994Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:15:37.994Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:15:37.994Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:15:37.994Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:15:41.994Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:15:41.994Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:15:41.995Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:15:41.995Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:15:41.995Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:15:41.995Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:15:45.996Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:15:45.996Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:15:45.997Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:15:45.997Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:15:45.997Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:15:45.997Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:15:49.996Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:15:49.996Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:15:49.997Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:15:49.997Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:15:49.997Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:15:49.997Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:15:53.996Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:15:53.997Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:15:53.997Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:15:53.997Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:15:53.997Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:15:53.997Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:15:57.997Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:15:57.998Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:15:57.998Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:15:57.998Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:15:57.998Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:15:57.998Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:16:01.998Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:16:01.998Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:16:01.998Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:16:01.998Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:16:01.999Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:16:01.999Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:16:05.999Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:16:06.000Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:16:06.000Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:16:06.000Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:16:06.000Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:16:06.000Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:16:09.999Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:16:10.000Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:16:10.000Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:16:10.000Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:16:10.000Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:16:10.000Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:16:14.001Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:16:14.001Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:16:14.001Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:16:14.001Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:16:14.001Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:16:14.001Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:16:18.002Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:16:18.002Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:16:18.003Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:16:18.003Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:16:18.003Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:16:18.003Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:16:22.003Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:16:22.003Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:16:22.004Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:16:22.004Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:16:22.004Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:16:22.004Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:16:26.003Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:16:26.004Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:16:26.004Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:16:26.004Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:16:26.005Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:16:26.005Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:16:30.005Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:16:30.005Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:16:30.006Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:16:30.007Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:16:30.007Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:16:30.008Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:16:34.005Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:16:34.006Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:16:34.007Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:16:34.007Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:16:34.007Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:16:34.007Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:16:38.006Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:16:38.007Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:16:38.008Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:16:38.008Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:16:38.008Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:16:38.009Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:16:42.007Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:16:42.008Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:16:42.008Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:16:42.008Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:16:42.009Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:16:42.009Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:16:46.008Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:16:46.009Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:16:46.009Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:16:46.009Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:16:46.009Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:16:46.009Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:16:50.009Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:16:50.009Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:16:50.010Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:16:50.010Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:16:50.010Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:16:50.010Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:16:54.010Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:16:54.010Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:16:54.011Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:16:54.011Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:16:54.011Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:16:54.011Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:16:58.011Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:16:58.011Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:16:58.012Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:16:58.012Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:16:58.012Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:16:58.012Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:17:02.011Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:17:02.011Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:17:02.012Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:17:02.012Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:17:02.012Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:17:02.012Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:17:06.012Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:17:06.012Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:17:06.013Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:17:06.013Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:17:06.014Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:17:06.014Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:17:10.013Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:17:10.013Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:17:10.014Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:17:10.014Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:17:10.014Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:17:10.014Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:17:14.015Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:17:14.015Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:17:14.016Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:17:14.016Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:17:14.016Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:17:14.016Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:17:18.015Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:17:18.015Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:17:18.015Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:17:18.016Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:17:18.016Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:17:18.016Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:17:22.017Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:17:22.017Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:17:22.018Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:17:22.018Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:17:22.018Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:17:22.018Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:17:26.017Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:17:26.017Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:17:26.018Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:17:26.018Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:17:26.018Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:17:26.018Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:17:30.019Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:17:30.019Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:17:30.019Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:17:30.019Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:17:30.019Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:17:30.020Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:17:34.018Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:17:34.018Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:17:34.019Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:17:34.019Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:17:34.019Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:17:34.019Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:17:38.019Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:17:38.019Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:17:38.020Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:17:38.020Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:17:38.020Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:17:38.020Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:17:42.020Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:17:42.020Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:17:42.021Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:17:42.021Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:17:42.021Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:17:42.021Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:17:46.021Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:17:46.022Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:17:46.022Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:17:46.022Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:17:46.023Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:17:46.023Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:17:50.023Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:17:50.023Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:17:50.024Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:17:50.024Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:17:50.025Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:17:50.025Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:17:54.024Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:17:54.024Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:17:54.025Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:17:54.025Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:17:54.026Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:17:54.026Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:17:58.025Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:17:58.025Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:17:58.025Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:17:58.025Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:17:58.026Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:17:58.026Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:18:02.026Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:18:02.026Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:18:02.027Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:18:02.027Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:18:02.027Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:18:02.027Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:18:06.025Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:18:06.026Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:18:06.026Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:18:06.026Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:18:06.026Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:18:06.026Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:18:10.026Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:18:10.026Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:18:10.027Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:18:10.027Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:18:10.027Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:18:10.028Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:18:14.027Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:18:14.027Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:18:14.028Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:18:14.028Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:18:14.028Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:18:14.028Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:18:18.028Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:18:18.028Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:18:18.029Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:18:18.029Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:18:18.029Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:18:18.029Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:18:22.029Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:18:22.029Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:18:22.029Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:18:22.030Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:18:22.030Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:18:22.030Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:18:26.030Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:18:26.030Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:18:26.031Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:18:26.031Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:18:26.031Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:18:26.031Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:18:30.031Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:18:30.032Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:18:30.032Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:18:30.033Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:18:30.033Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:18:30.033Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:18:34.032Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:18:34.032Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:18:34.033Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:18:34.033Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:18:34.033Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:18:34.033Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:18:38.033Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:18:38.034Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:18:38.034Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:18:38.034Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:18:38.035Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:18:38.035Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:18:42.033Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:18:42.034Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:18:42.035Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:18:42.035Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:18:42.035Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:18:42.035Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:18:46.034Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:18:46.034Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:18:46.035Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:18:46.035Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:18:46.035Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:18:46.035Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:18:50.035Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:18:50.035Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:18:50.035Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:18:50.035Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:18:50.035Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:18:50.035Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:18:54.036Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:18:54.036Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:18:54.036Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:18:54.036Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:18:54.036Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:18:54.036Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:18:58.037Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:18:58.037Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:18:58.038Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:18:58.038Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:18:58.038Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:18:58.038Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:19:02.038Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:19:02.038Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:19:02.038Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:19:02.038Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:19:02.038Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:19:02.038Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:19:06.039Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:19:06.040Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:19:06.040Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:19:06.040Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:19:06.040Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:19:06.041Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:19:10.040Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:19:10.040Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:19:10.041Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:19:10.041Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:19:10.041Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:19:10.042Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:19:14.041Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:19:14.041Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:19:14.042Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:19:14.042Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:19:14.043Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:19:14.044Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:19:18.041Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:19:18.042Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:19:18.042Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:19:18.043Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:19:18.043Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:19:18.043Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:19:22.043Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:19:22.043Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:19:22.043Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:19:22.043Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:19:22.043Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:19:22.043Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:19:26.044Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:19:26.045Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:19:26.045Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:19:26.045Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:19:26.045Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:19:26.045Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:19:30.044Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:19:30.045Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:19:30.046Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:19:30.046Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:19:30.046Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:19:30.046Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:19:34.045Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:19:34.045Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:19:34.046Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:19:34.046Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:19:34.046Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:19:34.046Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:19:38.046Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:19:38.047Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:19:38.047Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:19:38.047Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:19:38.047Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:19:38.047Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:19:42.048Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:19:42.048Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:19:42.049Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:19:42.049Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:19:42.049Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:19:42.049Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:19:46.049Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:19:46.049Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:19:46.050Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:19:46.050Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:19:46.050Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:19:46.050Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:19:50.049Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:19:50.050Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:19:50.050Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:19:50.050Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:19:50.050Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:19:50.050Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:19:54.050Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:19:54.051Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:19:54.052Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:19:54.052Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:19:54.052Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:19:54.052Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:19:58.051Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:19:58.052Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:19:58.052Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:19:58.052Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:19:58.052Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:19:58.053Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:20:02.052Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:20:02.053Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:20:02.053Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:20:02.053Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:20:02.054Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:20:02.054Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:20:06.052Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:20:06.053Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:20:06.053Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:20:06.053Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:20:06.053Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:20:06.053Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:20:10.053Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:20:10.053Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:20:10.054Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:20:10.054Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:20:10.054Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:20:10.054Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:20:14.053Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:20:14.054Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:20:14.055Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:20:14.055Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:20:14.055Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:20:14.055Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:20:18.054Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:20:18.054Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:20:18.055Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:20:18.055Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:20:18.055Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:20:18.055Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:20:22.053Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:20:22.054Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:20:22.054Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:20:22.055Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:20:22.055Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:20:22.055Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:20:26.054Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:20:26.054Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:20:26.055Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:20:26.055Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:20:26.056Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:20:26.056Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:20:30.055Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:20:30.055Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:20:30.055Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:20:30.056Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:20:30.056Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:20:30.056Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:20:34.055Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:20:34.056Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:20:34.056Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:20:34.057Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:20:34.057Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:20:34.057Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:20:38.057Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:20:38.057Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:20:38.057Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:20:38.057Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:20:38.057Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:20:38.058Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:20:42.057Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:20:42.058Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:20:42.058Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:20:42.059Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:20:42.059Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:20:42.059Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:20:46.059Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:20:46.059Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:20:46.060Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:20:46.060Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:20:46.060Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:20:46.060Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:20:50.060Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:20:50.060Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:20:50.061Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:20:50.061Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:20:50.061Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:20:50.061Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:20:54.060Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:20:54.060Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:20:54.061Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:20:54.061Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:20:54.061Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:20:54.061Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:20:58.060Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:20:58.061Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:20:58.061Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:20:58.061Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:20:58.061Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:20:58.061Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:21:02.061Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:21:02.061Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:21:02.062Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:21:02.062Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:21:02.062Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:21:02.062Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:21:06.063Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:21:06.064Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:21:06.064Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:21:06.064Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:21:06.065Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:21:06.065Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:21:10.064Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:21:10.065Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:21:10.065Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:21:10.065Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:21:10.065Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:21:10.066Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:21:14.064Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:21:14.065Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:21:14.065Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:21:14.065Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:21:14.066Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:21:14.066Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:21:18.064Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:21:18.065Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:21:18.065Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:21:18.065Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:21:18.065Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:21:18.065Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:21:22.066Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:21:22.067Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:21:22.068Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:21:22.068Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:21:22.068Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:21:22.068Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:21:26.067Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:21:26.068Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:21:26.069Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:21:26.069Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:21:26.069Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:21:26.069Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:21:30.068Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:21:30.068Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:21:30.069Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:21:30.069Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:21:30.070Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:21:30.070Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:21:34.069Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:21:34.069Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:21:34.070Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:21:34.070Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:21:34.070Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:21:34.070Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:21:38.070Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:21:38.070Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:21:38.071Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:21:38.071Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:21:38.071Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:21:38.071Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:21:42.072Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:21:42.073Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:21:42.074Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:21:42.075Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:21:42.075Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:21:42.075Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:21:46.073Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:21:46.073Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:21:46.074Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:21:46.074Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:21:46.074Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:21:46.074Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:21:50.074Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:21:50.074Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:21:50.074Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:21:50.074Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:21:50.074Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:21:50.074Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:21:54.074Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:21:54.074Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:21:54.075Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:21:54.075Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:21:54.075Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:21:54.075Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:21:58.074Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:21:58.075Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:21:58.075Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:21:58.075Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:21:58.075Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:21:58.075Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:22:02.075Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:22:02.076Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:22:02.077Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:22:02.078Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:22:02.078Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:22:02.078Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:22:06.076Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:22:06.076Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:22:06.077Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:22:06.077Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:22:06.077Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:22:06.077Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:22:10.077Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:22:10.077Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:22:10.078Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:22:10.078Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:22:10.079Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:22:10.079Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:22:14.077Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:22:14.078Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:22:14.078Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:22:14.079Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:22:14.079Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:22:14.079Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:22:18.078Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:22:18.079Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:22:18.079Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:22:18.079Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:22:18.079Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:22:18.079Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:22:22.079Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:22:22.079Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:22:22.080Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:22:22.080Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:22:22.080Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:22:22.080Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:22:26.079Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:22:26.080Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:22:26.080Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:22:26.080Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:22:26.080Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:22:26.080Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:22:30.080Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:22:30.081Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:22:30.081Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:22:30.081Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:22:30.081Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:22:30.081Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:22:34.081Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:22:34.081Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:22:34.081Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:22:34.082Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:22:34.082Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:22:34.082Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:22:38.081Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:22:38.081Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:22:38.081Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:22:38.081Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:22:38.081Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:22:38.082Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:22:42.082Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:22:42.082Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:22:42.082Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:22:42.083Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:22:42.083Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:22:42.083Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:22:46.084Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:22:46.084Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:22:46.085Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:22:46.085Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:22:46.085Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:22:46.085Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:22:50.085Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:22:50.086Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:22:50.086Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:22:50.087Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:22:50.087Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:22:50.087Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:22:54.087Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:22:54.087Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:22:54.087Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:22:54.088Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:22:54.088Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:22:54.088Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:22:58.087Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:22:58.087Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:22:58.087Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:22:58.087Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:22:58.088Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:22:58.088Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:23:02.089Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:23:02.089Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:23:02.090Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:23:02.090Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:23:02.090Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:23:02.090Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:23:06.090Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:23:06.090Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:23:06.091Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:23:06.091Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:23:06.091Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:23:06.091Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:23:10.090Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:23:10.090Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:23:10.090Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:23:10.090Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:23:10.090Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:23:10.090Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:23:14.092Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:23:14.093Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:23:14.093Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:23:14.094Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:23:14.094Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:23:14.094Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:23:18.093Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:23:18.093Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:23:18.093Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:23:18.093Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:23:18.093Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:23:18.093Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:23:22.094Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:23:22.094Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:23:22.094Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:23:22.094Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:23:22.094Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:23:22.094Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:23:26.094Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:23:26.094Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:23:26.095Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:23:26.095Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:23:26.095Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:23:26.095Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges
+[2026-03-26T06:23:30.094Z] [bridge] PULSE: active=0, avgEng=0.00
+[2026-03-26T06:23:30.094Z] [server] relay → teachers: cognitivepulse/class/class-101/pulse
+[2026-03-26T06:23:30.094Z] [bridge] Recv: cognitivepulse/class/class-101/cognitive-map from backend (type: cognitive-map-snapshot)
+[2026-03-26T06:23:30.094Z] [server] relay → teachers: cognitivepulse/class/class-101/cognitive-map
+[2026-03-26T06:23:30.094Z] [bridge] Recv: cognitivepulse/class/class-101/teacher/nudges from backend (type: teacher-nudge)
+[2026-03-26T06:23:30.094Z] [server] relay → teachers: cognitivepulse/class/class-101/teacher/nudges

@@ -79,6 +79,9 @@ export function consumeClassEnvelope(
     viewModel.classPulse = payload;
     viewModel.summary.liveClassPulse = payload.averageEngagement;
     viewModel.summary.activeStudentCount = payload.activeStudentCount;
+    viewModel.summary.contributingStudentCount = payload.contributingStudentCount;
+    viewModel.summary.missingSignalCount = payload.missingSignalCount;
+    viewModel.summary.liveSignalState = payload.liveSignalState;
     viewModel.summary.alertLevel = payload.alertLevel;
     viewModel.lastUpdatedAt = payload.timestamp;
     return viewModel;
