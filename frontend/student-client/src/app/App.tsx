@@ -8,6 +8,7 @@ import { createLandmarkSmoother } from "../vision/landmark-smoother";
 import { createTrackingMetricsCollector } from "../vision/tracking-metrics";
 import { createHeadPoseEstimator, estimateHeadOrientationScore } from "../vision/head-pose-estimator";
 import { createDebugOverlay } from "../vision/debug-overlay";
+import { createClientYoloService } from "../vision/client-yolo-service";
 
 function LiveFaceTracker() {
   const context = useContext(StudentContext)!;
@@ -90,9 +91,44 @@ function LiveFaceTracker() {
     let camera: Camera | null = null;
     let faceMesh: FaceMesh | null = null;
     let stream: MediaStream | null = null;
+    let yoloBusy = false;
     let isMounted = true;
     let consecutiveDetections = 0;
     let consecutiveMisses = 0;
+
+    const clientYolo = createClientYoloService({
+      faceModelUrl: "/models/yolov8-face.onnx",
+      eyeModelUrl: "/models/yolov8-eye.onnx",
+      executionProviders: ["wasm"],
+    });
+
+    const publishWithClientYolo = async (
+      input: Parameters<typeof context.publishVisualObservation>[0],
+    ): Promise<void> => {
+      if (yoloBusy) {
+        return;
+      }
+
+      yoloBusy = true;
+      try {
+        const clientYoloResult = await clientYolo.analyze({
+          faceCropDataUrl: input.faceCropDataUrl,
+          confidence: input.confidence,
+          facePresent: input.facePresent,
+          frameTimestamp: input.frameTimestamp ?? new Date().toISOString(),
+        });
+
+        context.publishVisualObservation({
+          ...input,
+          clientYoloResult,
+        });
+      } catch {
+        setErrorMsg("Client YOLO unavailable. Live engagement is paused.");
+        setIsActive(false);
+      } finally {
+        yoloBusy = false;
+      }
+    };
     
     async function start() {
       try {
@@ -105,6 +141,8 @@ function LiveFaceTracker() {
         });
         if (!isMounted) return;
         
+        await clientYolo.preload();
+
         if (videoRef.current) {
           videoRef.current.srcObject = stream;
           if (debugMode && containerRef.current) {
@@ -156,7 +194,7 @@ function LiveFaceTracker() {
             );
             const faceCropDataUrl = captureFaceCropDataUrl(landmarks);
 
-            context.publishVisualObservation({
+            void publishWithClientYolo({
               facePresent: true,
               headOrientationScore,
               gazeFocusScore,
@@ -187,12 +225,13 @@ function LiveFaceTracker() {
              consecutiveDetections = 0;
              smootherRef.current.markMiss();
 
-             context.publishVisualObservation({
+             void publishWithClientYolo({
               facePresent: false,
               headOrientationScore: 0,
               gazeFocusScore: 0,
               attentivenessScore: 0,
               confidence: consecutiveMisses > 2 ? 0 : 0.1,
+              frameTimestamp: new Date().toISOString(),
             });
 
             const report = metricsRef.current.record(false, 0);
@@ -248,7 +287,7 @@ function LiveFaceTracker() {
     <div ref={containerRef} style={{ background: "rgba(0,0,0,0.3)", borderRadius: "8px", height: "200px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", marginBottom: "1rem", color: isActive ? "var(--accent-green)" : "var(--accent-red)", overflow: "hidden", position: "relative" }}>
       <video ref={videoRef} style={{ position: "absolute", width: "100%", height: "100%", objectFit: "cover", opacity: 0.3 }} playsInline muted />
       <div style={{ zIndex: 2, fontWeight: "bold", background: "rgba(0,0,0,0.5)", padding: "4px 8px", borderRadius: "4px" }}>
-        {errorMsg ? errorMsg : isActive ? "AI Active (MediaPipe FaceMesh)" : "Initializing Camera..."}
+        {errorMsg ? errorMsg : isActive ? "AI Active (MediaPipe + YOLOv8 ONNX)" : "Initializing Camera..."}
       </div>
       <button onClick={() => setDebugMode(!debugMode)} style={{ position: "absolute", bottom: "8px", right: "8px", padding: "4px 8px", fontSize: "10px", zIndex: 3, background: debugMode ? "rgba(0,255,0,0.3)" : "rgba(128,128,128,0.3)", border: "1px solid currentColor", borderRadius: "4px", cursor: "pointer", color: "inherit" }}>
         {debugMode ? "Debug ON" : "Debug OFF"}

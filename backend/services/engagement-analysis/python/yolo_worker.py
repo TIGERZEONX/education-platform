@@ -18,6 +18,57 @@ class AnalyzerModels:
     eye_model: YOLO
 
 
+def load_scoring_criteria() -> Dict[str, Any]:
+    criteria_path = os.environ.get(
+        "ENGAGEMENT_SCORING_CRITERIA_PATH",
+        os.path.join(os.path.dirname(__file__), "scoring_criteria.json"),
+    )
+
+    with open(criteria_path, "r", encoding="utf-8") as fp:
+        criteria = json.load(fp)
+
+    validate_scoring_criteria(criteria)
+    return criteria
+
+
+def validate_scoring_criteria(criteria: Dict[str, Any]) -> None:
+    required_top_keys = [
+        "weights",
+        "signalValues",
+        "headPoseThresholds",
+        "score",
+        "signalQualityThresholds",
+        "faceWidth",
+        "modelConfidenceBlend",
+    ]
+    for key in required_top_keys:
+        if key not in criteria:
+            raise ValueError(f"missing scoring criteria key: {key}")
+
+    weights = criteria["weights"]
+    required_weights = ["eyeState", "gazeDirection", "headPose", "faceWidthRatio", "detectionStability"]
+    for key in required_weights:
+        value = float(weights.get(key, -1.0))
+        if value < 0.0 or value > 1.0:
+            raise ValueError(f"invalid weight for {key}: {value}")
+
+    total = sum(float(weights[key]) for key in required_weights)
+    if abs(total - 1.0) > 1e-6:
+        raise ValueError(f"weights must sum to 1.0, got {total}")
+
+    score_cfg = criteria["score"]
+    score_min = int(score_cfg["min"])
+    score_max = int(score_cfg["max"])
+    if score_min < 0 or score_max > 100 or score_min >= score_max:
+        raise ValueError("score min/max criteria are invalid")
+
+    thresholds = score_cfg["categoryThresholds"]
+    engaged_min = int(thresholds["engagedMin"])
+    neutral_min = int(thresholds["neutralMin"])
+    if not (score_min <= neutral_min <= engaged_min <= score_max):
+        raise ValueError("category thresholds are out of order")
+
+
 def clamp(value: float, lo: float, hi: float) -> float:
     return max(lo, min(hi, value))
 
@@ -36,7 +87,7 @@ def decode_data_url(data_url: Optional[str]) -> Optional[np.ndarray]:
         return None
 
 
-def infer_from_face_and_eyes(models: AnalyzerModels, img: Optional[np.ndarray]) -> Dict[str, Any]:
+def infer_from_face_and_eyes(models: AnalyzerModels, img: Optional[np.ndarray], criteria: Dict[str, Any]) -> Dict[str, Any]:
     if img is None:
         return {
             "face_confidence": 0.0,
@@ -128,9 +179,12 @@ def infer_from_face_and_eyes(models: AnalyzerModels, img: Optional[np.ndarray]) 
         eye_state = "unstable"
 
     # Use dedicated face detector geometry and confidence to infer head pose class.
-    if face_conf >= 0.7 and face_width_ratio >= 0.14:
+    stable_cfg = criteria["headPoseThresholds"]["stable"]
+    tilted_cfg = criteria["headPoseThresholds"]["tilted"]
+
+    if face_conf >= float(stable_cfg["minFaceConfidence"]) and face_width_ratio >= float(stable_cfg["minFaceWidthRatio"]):
         head_pose = "stable"
-    elif face_conf >= 0.45 and face_width_ratio >= 0.1:
+    elif face_conf >= float(tilted_cfg["minFaceConfidence"]) and face_width_ratio >= float(tilted_cfg["minFaceWidthRatio"]):
         head_pose = "tilted"
     else:
         head_pose = "extreme"
@@ -146,43 +200,52 @@ def infer_from_face_and_eyes(models: AnalyzerModels, img: Optional[np.ndarray]) 
     }
 
 
-def signal_value_from_eye_state(state: str) -> float:
-    if state == "open":
-        return 1.0
-    if state == "unstable":
-        return 0.42
-    return 0.22
+def signal_value_from_eye_state(state: str, criteria: Dict[str, Any]) -> float:
+    return float(criteria["signalValues"]["eyeState"].get(state, 0.0))
 
 
-def signal_value_from_gaze(direction: str) -> float:
-    return 1.0 if direction == "focused" else 0.25
+def signal_value_from_gaze(direction: str, criteria: Dict[str, Any]) -> float:
+    return float(criteria["signalValues"]["gazeDirection"].get(direction, 0.0))
 
 
-def signal_value_from_pose(pose: str) -> float:
-    if pose == "stable":
-        return 1.0
-    if pose == "tilted":
-        return 0.56
-    return 0.2
+def signal_value_from_pose(pose: str, criteria: Dict[str, Any]) -> float:
+    return float(criteria["signalValues"]["headPose"].get(pose, 0.0))
 
 
-def category_for_score(score: int) -> str:
-    if score >= 67:
+def category_for_score(score: int, criteria: Dict[str, Any]) -> str:
+    thresholds = criteria["score"]["categoryThresholds"]
+    if score >= int(thresholds["engagedMin"]):
         return "engaged"
-    if score >= 34:
+    if score >= int(thresholds["neutralMin"]):
         return "neutral"
     return "disengaged"
 
 
-def analyze(payload: Dict[str, Any], models: AnalyzerModels) -> Dict[str, Any]:
+def analyze(payload: Dict[str, Any], models: AnalyzerModels, criteria: Dict[str, Any]) -> Dict[str, Any]:
     t0 = time.perf_counter()
     img = decode_data_url(payload.get("faceCropDataUrl"))
-    detector_features = infer_from_face_and_eyes(models, img)
+    detector_features = infer_from_face_and_eyes(models, img, criteria)
 
+    face_width_cfg = criteria["faceWidth"]
     confidence = float(clamp(float(payload.get("confidence", 0.0)), 0.0, 1.0))
-    incoming_width_ratio = float(clamp(float(payload.get("faceWidthRatio", 0.16)), 0.08, 0.40))
-    detected_width_ratio = float(clamp(float(detector_features.get("face_width_ratio", incoming_width_ratio)), 0.08, 0.40))
-    face_width_ratio = (incoming_width_ratio * 0.3) + (detected_width_ratio * 0.7)
+    incoming_width_ratio = float(
+        clamp(
+            float(payload.get("faceWidthRatio", 0.16)),
+            float(face_width_cfg["min"]),
+            float(face_width_cfg["max"]),
+        )
+    )
+    detected_width_ratio = float(
+        clamp(
+            float(detector_features.get("face_width_ratio", incoming_width_ratio)),
+            float(face_width_cfg["min"]),
+            float(face_width_cfg["max"]),
+        )
+    )
+    face_width_ratio = (
+        incoming_width_ratio * float(face_width_cfg["incomingBlend"])
+        + detected_width_ratio * float(face_width_cfg["detectedBlend"])
+    )
     detection_stability = float(clamp(float(payload.get("detectionStability", confidence)), 0.0, 1.0))
 
     eye_state = detector_features["eye_state"]
@@ -190,30 +253,38 @@ def analyze(payload: Dict[str, Any], models: AnalyzerModels) -> Dict[str, Any]:
     head_pose = detector_features["head_pose"]
     face_confidence = float(detector_features.get("face_confidence", 0.0))
     eye_confidence = float(detector_features.get("eye_confidence", 0.0))
-    model_confidence = (face_confidence * 0.65) + (eye_confidence * 0.35)
+    model_confidence_cfg = criteria["modelConfidenceBlend"]
+    model_confidence = (
+        face_confidence * float(model_confidence_cfg["faceWeight"])
+        + eye_confidence * float(model_confidence_cfg["eyeWeight"])
+    )
+
+    weights = criteria["weights"]
 
     normalized = (
-        signal_value_from_eye_state(eye_state) * 0.25
-        + signal_value_from_gaze(gaze_direction) * 0.35
-        + signal_value_from_pose(head_pose) * 0.15
-        + (face_width_ratio / 0.40) * 0.10
-        + detection_stability * 0.15
+        signal_value_from_eye_state(eye_state, criteria) * float(weights["eyeState"])
+        + signal_value_from_gaze(gaze_direction, criteria) * float(weights["gazeDirection"])
+        + signal_value_from_pose(head_pose, criteria) * float(weights["headPose"])
+        + (face_width_ratio / float(face_width_cfg["normalizationMax"])) * float(weights["faceWidthRatio"])
+        + detection_stability * float(weights["detectionStability"])
     )
 
     score = int(round(clamp(normalized, 0.0, 1.0) * 100.0))
-    score = max(1, min(100, score))
+    score_cfg = criteria["score"]
+    score = max(int(score_cfg["min"]), min(int(score_cfg["max"]), score))
 
     signal_quality = "stable"
-    if not payload.get("facePresent", False) or confidence < 0.35:
+    quality_cfg = criteria["signalQualityThresholds"]
+    if not payload.get("facePresent", False) or confidence < float(quality_cfg["insufficientConfidenceMax"]):
         signal_quality = "insufficient"
-    elif confidence < 0.6:
+    elif confidence < float(quality_cfg["unstableConfidenceMax"]):
         signal_quality = "unstable"
 
     latency_ms = (time.perf_counter() - t0) * 1000.0
 
     return {
         "engagementScore": score,
-        "category": category_for_score(score),
+        "category": category_for_score(score, criteria),
         "confidence": confidence,
         "eyeState": eye_state,
         "gazeDirection": gaze_direction,
@@ -229,6 +300,7 @@ def analyze(payload: Dict[str, Any], models: AnalyzerModels) -> Dict[str, Any]:
 
 def main() -> None:
     os.environ.setdefault("YOLO_VERBOSE", "False")
+    criteria = load_scoring_criteria()
     face_model_path = os.path.abspath(
         os.path.join(
             os.path.dirname(__file__),
@@ -276,7 +348,7 @@ def main() -> None:
                 response = {
                     "id": req_id,
                     "ok": True,
-                    "result": analyze(payload, models),
+                    "result": analyze(payload, models, criteria),
                 }
             else:
                 response = {"id": req_id, "ok": False, "error": "unsupported-message"}

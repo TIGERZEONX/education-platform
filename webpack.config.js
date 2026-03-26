@@ -1,5 +1,19 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
+const onnxModelPatterns = [
+  {
+    from: path.resolve(__dirname, 'backend/services/engagement-analysis/models/yolov8-face.onnx'),
+    to: 'models/yolov8-face.onnx',
+    noErrorOnMissing: true,
+  },
+  {
+    from: path.resolve(__dirname, 'backend/services/engagement-analysis/models/yolov8-eye.onnx'),
+    to: 'models/yolov8-eye.onnx',
+    noErrorOnMissing: true,
+  },
+];
 
 const commonRules = [
   {
@@ -65,9 +79,23 @@ const webConfig = {
         </html>
       `
     }),
+    new CopyWebpackPlugin({
+      patterns: onnxModelPatterns,
+    }),
   ],
   devServer: {
-    static: './dist',
+    static: [
+      {
+        directory: path.resolve(__dirname, 'dist'),
+      },
+      {
+        directory: path.resolve(__dirname, 'backend/services/engagement-analysis/models'),
+        publicPath: '/models',
+        staticOptions: {
+          fallthrough: true,
+        },
+      },
+    ],
     port: 3000,
     open: ['/student.html', '/teacher.html'],
   },
@@ -88,6 +116,11 @@ const extensionConfig = {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
   },
   module: { rules: commonRules },
+  plugins: [
+    new CopyWebpackPlugin({
+      patterns: onnxModelPatterns,
+    }),
+  ],
 };
 
 module.exports = [webConfig, extensionConfig];

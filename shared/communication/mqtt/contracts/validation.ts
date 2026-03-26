@@ -69,6 +69,18 @@ export function isEngagementSignal(input: unknown): input is EngagementSignal {
     isBetweenZeroAndOne(input.value) &&
     isBetweenZeroAndOne(input.engagementScore) &&
     input.value === input.engagementScore &&
+    typeof input.engagementScoreBand === "number" &&
+    input.engagementScoreBand >= 1 &&
+    input.engagementScoreBand <= 100 &&
+    Number.isFinite(input.engagementScoreBand) &&
+    (input.engagementCategory === "engaged" ||
+      input.engagementCategory === "neutral" ||
+      input.engagementCategory === "disengaged") &&
+    isBetweenZeroAndOne(input.mlConfidence) &&
+    (input.eyeState === "open" || input.eyeState === "closed" || input.eyeState === "unstable") &&
+    (input.gazeDirection === "focused" || input.gazeDirection === "distracted") &&
+    (input.headPoseState === "stable" || input.headPoseState === "tilted" || input.headPoseState === "extreme") &&
+    isNonEmptyString(input.modelVersion) &&
     (input.cameraStatus === "active" ||
       input.cameraStatus === "blocked" ||
       input.cameraStatus === "unavailable") &&

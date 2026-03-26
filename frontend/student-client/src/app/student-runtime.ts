@@ -14,7 +14,6 @@ import {
   buildPublishPacket,
 } from "../../../../backend/services/realtime-messaging/src";
 import {
-  deriveEngagementScore,
   mapFeedbackControlToType,
   type QuickFeedbackControl,
   type VisionInputFrame,
@@ -92,7 +91,7 @@ export function createStudentRuntime(config: StudentRuntimeConfig): StudentRunti
   let connectionHealth: ConnectionHealth = "healthy";
   let operationalState: StudentOperationalState = "idle";
   let cameraStatus: CameraStatus = "unavailable";
-  let lastEngagementScore: number | null = null;
+  let lastEngagementScore: number | null = 1;
   const connectivity = new StudentConnectivityLayer();
   const events: StudentClientEvent[] = [];
 
@@ -173,6 +172,16 @@ export function createStudentRuntime(config: StudentRuntimeConfig): StudentRunti
   };
 
   const buildEngagementSignal = (score: number): EngagementSignal => ({
+    // Strict contract requires YOLO metadata on every engagement publish.
+    // For runtime-generated heartbeats we keep deterministic placeholder metadata.
+    ...(() => {
+      const band = Math.max(1, Math.min(100, Math.round(score * 100)));
+      const category = band >= 67 ? "engaged" : band >= 34 ? "neutral" : "disengaged";
+      return {
+        engagementScoreBand: band,
+        engagementCategory: category as EngagementSignal["engagementCategory"],
+      };
+    })(),
     studentId: config.studentId,
     studentName: visibleStudentName,
     classId: config.classId,
@@ -180,6 +189,11 @@ export function createStudentRuntime(config: StudentRuntimeConfig): StudentRunti
     value: score,
     engagementScore: score,
     cameraStatus,
+    mlConfidence: score,
+    eyeState: "unstable",
+    gazeDirection: "distracted",
+    headPoseState: "extreme",
+    modelVersion: "yolov8-runtime-heartbeat-v1",
     timestamp: now(),
   });
 
@@ -340,15 +354,8 @@ export function createStudentRuntime(config: StudentRuntimeConfig): StudentRunti
       });
     },
     publishVisionFrame: (frame) => {
-      const engagementScore = deriveEngagementScore(frame);
-      lastEngagementScore = engagementScore;
-      const signal = buildEngagementSignal(engagementScore);
-      publishPayload(config.topics.engagementTopic, "engagement-signal", signal);
-      publishSession("heartbeat");
-      recordEvent("engagement-update", "Vision-derived engagement update emitted.", {
-        engagementScore,
-      });
-      return signal;
+      void frame;
+      throw new Error("publishVisionFrame is disabled in strict YOLO mode. Use publishVisualObservation().");
     },
     publishFeedbackControl: (control) => {
       if (!joined) {
@@ -373,7 +380,7 @@ export function createStudentRuntime(config: StudentRuntimeConfig): StudentRunti
       return event;
     },
     publishEngagementHeartbeat: () => {
-      const score = lastEngagementScore ?? 0;
+      const score = lastEngagementScore ?? 1;
       const signal = buildEngagementSignal(score);
       publishPayload(config.topics.engagementTopic, "engagement-signal", signal);
       publishSession("heartbeat");

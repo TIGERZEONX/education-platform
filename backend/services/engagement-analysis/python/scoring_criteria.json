@@ -1,0 +1,59 @@
+{
+  "version": "1.0.0",
+  "weights": {
+    "eyeState": 0.25,
+    "gazeDirection": 0.35,
+    "headPose": 0.15,
+    "faceWidthRatio": 0.1,
+    "detectionStability": 0.15
+  },
+  "signalValues": {
+    "eyeState": {
+      "open": 1.0,
+      "unstable": 0.42,
+      "closed": 0.22
+    },
+    "gazeDirection": {
+      "focused": 1.0,
+      "distracted": 0.25
+    },
+    "headPose": {
+      "stable": 1.0,
+      "tilted": 0.56,
+      "extreme": 0.2
+    }
+  },
+  "headPoseThresholds": {
+    "stable": {
+      "minFaceConfidence": 0.7,
+      "minFaceWidthRatio": 0.14
+    },
+    "tilted": {
+      "minFaceConfidence": 0.45,
+      "minFaceWidthRatio": 0.1
+    }
+  },
+  "score": {
+    "min": 1,
+    "max": 100,
+    "categoryThresholds": {
+      "engagedMin": 67,
+      "neutralMin": 34
+    }
+  },
+  "signalQualityThresholds": {
+    "insufficientConfidenceMax": 0.35,
+    "unstableConfidenceMax": 0.6
+  },
+  "faceWidth": {
+    "min": 0.08,
+    "max": 0.4,
+    "normalizationMax": 0.4,
+    "incomingBlend": 0.3,
+    "detectedBlend": 0.7
+  },
+  "modelConfidenceBlend": {
+    "faceWeight": 0.65,
+    "eyeWeight": 0.35
+  }
+}

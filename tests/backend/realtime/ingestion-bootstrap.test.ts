@@ -39,6 +39,13 @@ test("ingestion bootstrap buffers inbound signals and publishes derived outputs"
       value: 0.8,
       engagementScore: 0.8,
       cameraStatus: "active",
+      engagementScoreBand: 80,
+      engagementCategory: "engaged",
+      mlConfidence: 0.8,
+      eyeState: "open",
+      gazeDirection: "focused",
+      headPoseState: "stable",
+      modelVersion: "test-yolov8-v1",
       timestamp: "2026-03-25T09:59:55.000Z",
     },
   });

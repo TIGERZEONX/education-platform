@@ -75,6 +75,13 @@ export interface DataFusionCycleInput {
 
 export type SignalQuality = "stable" | "unstable" | "missing";
 
+export interface EngagementTrend {
+  direction: "up" | "flat" | "down";
+  delta: number;
+  volatility: number;
+  samples: number;
+}
+
 export interface FusedStudentState {
   studentId: string;
   studentName?: string;
@@ -86,6 +93,7 @@ export interface FusedStudentState {
   cameraOff: boolean;
   inactive: boolean;
   lastSeenAt: string;
+  engagementTrend?: EngagementTrend;
 }
 
 export interface UnifiedClassState {
@@ -99,6 +107,7 @@ export interface UnifiedClassState {
   explicitConfusionCount: number;
   lowEngagementCount: number;
   studentStates: FusedStudentState[];
+  engagementTrend?: EngagementTrend;
 }
 
 export interface DataFusionCycleDerived {

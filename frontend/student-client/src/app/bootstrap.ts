@@ -36,7 +36,7 @@ export interface StudentClientBootstrapConfig {
   feedbackMinIntervalMs?: number;
   now?: () => string;
   engagementAnalysis?: {
-    endpoint: string;
+    endpoint?: string;
     minIntervalMs?: number;
     requestTimeoutMs?: number;
   };
@@ -91,12 +91,10 @@ export function bootstrapStudentClient(
   const feedback = createFeedbackController({
     minIntervalMs: config.feedbackMinIntervalMs,
   });
-  const engagementAnalyzer = config.engagementAnalysis
-    ? createEngagementAnalysisClient({
-        endpoint: config.engagementAnalysis.endpoint,
-        requestTimeoutMs: config.engagementAnalysis.requestTimeoutMs ?? 700,
-      })
-    : null;
+  const engagementAnalyzer = createEngagementAnalysisClient({
+    endpoint: config.engagementAnalysis?.endpoint ?? "http://localhost:4000/api/analyze-engagement",
+    requestTimeoutMs: config.engagementAnalysis?.requestTimeoutMs ?? 700,
+  });
 
   const clientIdentity: MqttClientIdentity = {
     role: "student",
@@ -125,13 +123,26 @@ export function bootstrapStudentClient(
   let heartbeatHandle: ReturnType<typeof setInterval> | undefined;
   let analysisInFlight = false;
   let lastAnalysisAtMs = 0;
-  let lastStrictSignal: EngagementSignal | null = null;
+  let strictPipelineHealthy = true;
+  let lastStrictSignal: EngagementSignal = {
+    studentId: config.studentId,
+    studentName: config.studentName,
+    classId: config.classId,
+    valueType: "engagement-score",
+    value: 1,
+    engagementScore: 1,
+    engagementScoreBand: 100,
+    engagementCategory: "engaged",
+    cameraStatus: runtime.state().cameraStatus,
+    mlConfidence: 1,
+    eyeState: "open",
+    gazeDirection: "focused",
+    headPoseState: "stable",
+    modelVersion: "yolov8-face-eye-v1",
+    timestamp: config.now ? config.now() : new Date().toISOString(),
+  };
 
-  const maybeAnalyzeWithBackend = (observation: VisualObservation, localSignal: EngagementSignal): void => {
-    if (!engagementAnalyzer) {
-      return;
-    }
-
+  const maybeAnalyzeWithBackend = (observation: VisualObservation): void => {
     if (analysisInFlight) {
       return;
     }
@@ -143,8 +154,13 @@ export function bootstrapStudentClient(
     }
 
     analysisInFlight = true;
-    engagementAnalyzer
-      .analyze({
+    if (!observation.clientYoloResult) {
+      strictPipelineHealthy = false;
+      analysisInFlight = false;
+      return;
+    }
+
+    const request = {
         studentId: config.studentId,
         classId: config.classId,
         timestamp: observation.frameTimestamp ?? (config.now ? config.now() : new Date().toISOString()),
@@ -156,34 +172,43 @@ export function bootstrapStudentClient(
         faceWidthRatio: observation.faceWidthRatio,
         detectionStability: observation.detectionStability,
         faceCropDataUrl: observation.faceCropDataUrl,
-      })
-      .then((result) => {
-        const normalizedRefinedScore = Math.max(0, Math.min(1, Number((result.engagementScore / 100).toFixed(3))));
-        const refinedSignal: EngagementSignal = {
-          studentId: config.studentId,
-          studentName: runtime.state().visibleStudentName,
-          classId: config.classId,
-          valueType: "engagement-score",
-          value: normalizedRefinedScore,
-          engagementScore: normalizedRefinedScore,
-          cameraStatus: runtime.state().cameraStatus,
-          engagementScoreBand: result.engagementScore,
-          engagementCategory: result.category,
-          mlConfidence: result.confidence,
-          eyeState: result.eyeState,
-          gazeDirection: result.gazeDirection,
-          headPoseState: result.headPose,
-          modelVersion: result.modelVersion,
-          timestamp: config.now ? config.now() : new Date().toISOString(),
-        };
+      };
 
-        runtime.publishEngagementSignal(refinedSignal);
-        lastStrictSignal = refinedSignal;
+    const clientResult = observation.clientYoloResult;
+    const normalizedClientScore = Math.max(0, Math.min(1, Number((clientResult.engagementScore / 100).toFixed(3))));
+    const clientSignal: EngagementSignal = {
+      studentId: config.studentId,
+      studentName: runtime.state().visibleStudentName,
+      classId: config.classId,
+      valueType: "engagement-score",
+      value: normalizedClientScore,
+      engagementScore: normalizedClientScore,
+      cameraStatus: runtime.state().cameraStatus,
+      engagementScoreBand: clientResult.engagementScore,
+      engagementCategory: clientResult.category,
+      mlConfidence: clientResult.confidence,
+      eyeState: clientResult.eyeState,
+      gazeDirection: clientResult.gazeDirection,
+      headPoseState: clientResult.headPose,
+      modelVersion: clientResult.modelVersion,
+      timestamp: config.now ? config.now() : new Date().toISOString(),
+    };
+
+    runtime.publishEngagementSignal(clientSignal);
+    lastStrictSignal = clientSignal;
+
+    engagementAnalyzer
+      .verify({
+        observation: request,
+        clientResult,
+      })
+      .then((verification) => {
+        strictPipelineHealthy = verification.verdict === "match";
         lastAnalysisAtMs = nowMs;
       })
       .catch(() => {
-        // Fallback: publish the local sensing signal if backend analysis fails
-        runtime.publishEngagementSignal(localSignal);
+        // Strict mode hard-fail: stop engagement publishing until YOLO succeeds again.
+        strictPipelineHealthy = false;
       })
       .finally(() => {
         analysisInFlight = false;
@@ -268,25 +293,9 @@ export function bootstrapStudentClient(
       return cameraState.cameraStatus;
     },
     publishVisualObservation: (observation) => {
-      const sensed = sensing.processObservation(observation);
-      const signal: EngagementSignal = {
-        studentId: config.studentId,
-        studentName: runtime.state().visibleStudentName,
-        classId: config.classId,
-        valueType: "engagement-score",
-        value: sensed.engagementScore,
-        engagementScore: sensed.engagementScore,
-        cameraStatus: runtime.state().cameraStatus,
-        timestamp: config.now ? config.now() : new Date().toISOString(),
-      };
-
-      if (engagementAnalyzer) {
-        void maybeAnalyzeWithBackend(observation, signal);
-        return lastStrictSignal ?? signal;
-      }
-
-      runtime.publishEngagementSignal(signal);
-      return signal;
+      sensing.processObservation(observation);
+      void maybeAnalyzeWithBackend(observation);
+      return lastStrictSignal;
     },
     publishVisionSignal: (frame) => {
       return runtime.publishVisionFrame(frame);
@@ -307,7 +316,14 @@ export function bootstrapStudentClient(
       runtime.publishFeedbackEvent(event);
     },
     publishEngagementHeartbeat: () => {
-      runtime.publishEngagementHeartbeat();
+      if (!strictPipelineHealthy) {
+        return;
+      }
+
+      runtime.publishEngagementSignal({
+        ...lastStrictSignal,
+        timestamp: config.now ? config.now() : new Date().toISOString(),
+      });
     },
   };
 }

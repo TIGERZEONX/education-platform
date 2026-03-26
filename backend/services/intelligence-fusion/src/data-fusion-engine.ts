@@ -90,6 +90,45 @@ function detectSharpConfusionSpike(
   return secondHalf >= firstHalf * 2;
 }
 
+function computeTrend(
+  series: Array<{ timestampMs: number; score: number }>,
+): { direction: "up" | "flat" | "down"; delta: number; volatility: number; samples: number } {
+  if (series.length === 0) {
+    return {
+      direction: "flat",
+      delta: 0,
+      volatility: 0,
+      samples: 0,
+    };
+  }
+
+  const ordered = [...series].sort((a, b) => a.timestampMs - b.timestampMs);
+  const first = ordered[0].score;
+  const last = ordered[ordered.length - 1].score;
+  const delta = Number((last - first).toFixed(3));
+  const mean = ordered.reduce((sum, point) => sum + point.score, 0) / ordered.length;
+  const variance =
+    ordered.reduce((sum, point) => {
+      const centered = point.score - mean;
+      return sum + centered * centered;
+    }, 0) / ordered.length;
+  const volatility = Number(Math.sqrt(variance).toFixed(3));
+
+  let direction: "up" | "flat" | "down" = "flat";
+  if (delta >= 0.08) {
+    direction = "up";
+  } else if (delta <= -0.08) {
+    direction = "down";
+  }
+
+  return {
+    direction,
+    delta,
+    volatility,
+    samples: ordered.length,
+  };
+}
+
 export function runDataFusionCycle(
   input: DataFusionCycleInput,
   thresholds: AlertThresholdConfig = DEFAULT_ALERT_THRESHOLDS,
@@ -133,6 +172,7 @@ export function runDataFusionCycle(
   }
 
   const latestEngagementByStudent = new Map<string, { timestampMs: number; score: number }>();
+  const engagementSeriesByStudent = new Map<string, Array<{ timestampMs: number; score: number }>>();
   const latestCameraStatusByStudent = new Map<string, "active" | "blocked" | "unavailable">();
   const latestStatusByStudent = new Map<string, StudentStatusEvent>();
   const confusionByStudent = new Map<string, number>();
@@ -149,6 +189,10 @@ export function runDataFusionCycle(
         score: event.engagementScore,
       });
     }
+
+    const series = engagementSeriesByStudent.get(event.studentId) ?? [];
+    series.push({ timestampMs, score: event.engagementScore });
+    engagementSeriesByStudent.set(event.studentId, series);
 
     latestCameraStatusByStudent.set(event.studentId, event.cameraStatus);
     latestSeenByStudent.set(
@@ -217,6 +261,7 @@ export function runDataFusionCycle(
           : cameraOff || operationalState === "disconnected" || inactive
             ? "unstable"
             : "stable";
+      const engagementTrend = computeTrend(engagementSeriesByStudent.get(studentId) ?? []);
 
       return {
         studentId,
@@ -229,6 +274,7 @@ export function runDataFusionCycle(
         cameraOff,
         inactive,
         lastSeenAt: new Date(latestSeenMs ?? windowStartMs).toISOString(),
+        engagementTrend,
       };
     });
 
@@ -263,6 +309,11 @@ export function runDataFusionCycle(
     (sum, state) => sum + state.explicitConfusionCount,
     0,
   );
+  const classTrendSeries = engagementEvents.map((event) => ({
+    timestampMs: toMs(event.timestamp),
+    score: event.engagementScore,
+  }));
+  const classEngagementTrend = computeTrend(classTrendSeries);
 
   const sharpConfusionSpike = detectSharpConfusionSpike(cycleTimestampMs, windowStartMs, confusedEventMs);
 
@@ -284,6 +335,7 @@ export function runDataFusionCycle(
     explicitConfusionCount,
     lowEngagementCount,
     studentStates: fusedStudentStates,
+    engagementTrend: classEngagementTrend,
   };
 
   const derived: DataFusionCycleDerived = {

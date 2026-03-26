@@ -9,7 +9,10 @@ import { startInProcessLiveBridge } from "../inprocess/live-bridge";
 import { parseIncomingPacket, getInProcessMqttBroker } from "../../../services/realtime-messaging/src";
 import { MongoDbHistoryStore } from "../../../services/persistence-history/src";
 import { createEngagementAnalyzer } from "../../../services/engagement-analysis/src";
-import type { EngagementAnalysisRequest } from "../../../../shared/communication/mqtt/contracts";
+import type {
+  EngagementAnalysisRequest,
+  EngagementVerificationRequest,
+} from "../../../../shared/communication/mqtt/contracts";
 
 import * as fs from "fs";
 
@@ -188,6 +191,80 @@ async function runServer() {
       res.json(response);
     } catch {
       res.status(500).json({ error: "Engagement analysis failed." });
+    }
+  });
+
+  app.post("/api/analyze-engagement/verify", async (req, res) => {
+    const body = req.body as Partial<EngagementVerificationRequest>;
+    const observation = body?.observation as Partial<EngagementAnalysisRequest> | undefined;
+    const clientResult = body?.clientResult;
+
+    if (!observation || !clientResult) {
+      res.status(400).json({ error: "Missing observation or clientResult." });
+      return;
+    }
+
+    if (typeof observation.studentId !== "string" || typeof observation.classId !== "string") {
+      res.status(400).json({ error: "Missing required identifiers in verification request." });
+      return;
+    }
+
+    if (
+      typeof observation.facePresent !== "boolean" ||
+      typeof observation.confidence !== "number" ||
+      typeof observation.headOrientationScore !== "number" ||
+      typeof observation.gazeFocusScore !== "number" ||
+      typeof observation.attentivenessScore !== "number"
+    ) {
+      res.status(400).json({ error: "Invalid observation metrics payload." });
+      return;
+    }
+
+    if (
+      typeof clientResult.engagementScore !== "number" ||
+      typeof clientResult.category !== "string" ||
+      typeof clientResult.eyeState !== "string" ||
+      typeof clientResult.gazeDirection !== "string" ||
+      typeof clientResult.headPose !== "string"
+    ) {
+      res.status(400).json({ error: "Invalid clientResult payload." });
+      return;
+    }
+
+    try {
+      const backendResult = await engagementAnalyzer.analyze({
+        studentId: observation.studentId,
+        classId: observation.classId,
+        timestamp: observation.timestamp ?? new Date().toISOString(),
+        facePresent: observation.facePresent,
+        confidence: observation.confidence,
+        headOrientationScore: observation.headOrientationScore,
+        gazeFocusScore: observation.gazeFocusScore,
+        attentivenessScore: observation.attentivenessScore,
+        faceWidthRatio: observation.faceWidthRatio,
+        detectionStability: observation.detectionStability,
+        faceCropDataUrl: observation.faceCropDataUrl,
+      });
+
+      const scoreDelta = Math.abs(clientResult.engagementScore - backendResult.engagementScore);
+      const drift = {
+        scoreDelta: Number(scoreDelta.toFixed(2)),
+        categoryMatch: clientResult.category === backendResult.category,
+        eyeStateMatch: clientResult.eyeState === backendResult.eyeState,
+        gazeDirectionMatch: clientResult.gazeDirection === backendResult.gazeDirection,
+        headPoseMatch: clientResult.headPose === backendResult.headPose,
+      };
+
+      const verdict = scoreDelta <= 8 && drift.categoryMatch ? "match" : "drifted";
+
+      res.json({
+        verifiedAt: new Date().toISOString(),
+        backendResult,
+        drift,
+        verdict,
+      });
+    } catch {
+      res.status(500).json({ error: "Engagement verification failed." });
     }
   });
 

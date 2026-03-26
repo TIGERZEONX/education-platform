@@ -23,6 +23,15 @@ test("data fusion computes active students and class pulse", () => {
         timestamp: "2026-03-25T09:59:55.000Z",
       },
       {
+        studentId: "Aarav",
+        classId: "class-101",
+        valueType: "engagement-score",
+        value: 0.7,
+        engagementScore: 0.7,
+        cameraStatus: "active",
+        timestamp: "2026-03-25T09:59:20.000Z",
+      },
+      {
         studentId: "Mia",
         classId: "class-101",
         valueType: "engagement-score",
@@ -46,4 +55,10 @@ test("data fusion computes active students and class pulse", () => {
   assert.strictEqual(result.classPulseSnapshot.activeStudentCount, 2);
   assert.strictEqual(result.classPulseSnapshot.alertLevel, "red");
   assert.ok(result.classPulseSnapshot.averageEngagement > 0.6);
+  assert.ok(result.derived.unifiedClassState.engagementTrend);
+  assert.ok(result.derived.unifiedClassState.engagementTrend!.samples >= 3);
+
+  const aarav = result.derived.unifiedClassState.studentStates.find((state) => state.studentId === "Aarav");
+  assert.ok(aarav?.engagementTrend);
+  assert.strictEqual(aarav?.engagementTrend?.direction, "up");
 });

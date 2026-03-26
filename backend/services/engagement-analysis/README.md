@@ -8,6 +8,9 @@ This service runs backend engagement analysis behind `POST /api/analyze-engageme
 - Worker loads dedicated `ultralytics` YOLOv8 face and eye models:
   - `backend/services/engagement-analysis/models/yolov8-face.pt`
   - `backend/services/engagement-analysis/models/yolov8-eye.pt`
+  - Optional client-hosted ONNX artifacts:
+    - `backend/services/engagement-analysis/models/yolov8-face.onnx`
+    - `backend/services/engagement-analysis/models/yolov8-eye.onnx`
 - Per frame, it infers eye/gaze/head-pose states from those dedicated detections and returns:
   - `engagementScore` (1-100)
   - `category` (`engaged|neutral|disengaged`)
@@ -29,7 +32,14 @@ npm run setup:ml
 npm run start:server
 ```
 
-3. Verify model health + telemetry:
+3. Export ONNX models for strict client-side YOLO hosting:
+
+```bash
+npm run setup:ml:onnx
+npm run check:ml:onnx
+```
+
+4. Verify model health + telemetry:
 
 ```bash
 npm run check:ml

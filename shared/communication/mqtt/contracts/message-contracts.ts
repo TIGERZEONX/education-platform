@@ -16,13 +16,13 @@ export interface EngagementSignal {
   value: number;
   engagementScore: number;
   cameraStatus: CameraStatus;
-  engagementScoreBand?: number;
-  engagementCategory?: "engaged" | "neutral" | "disengaged";
-  mlConfidence?: number;
-  eyeState?: "open" | "closed" | "unstable";
-  gazeDirection?: "focused" | "distracted";
-  headPoseState?: "stable" | "tilted" | "extreme";
-  modelVersion?: string;
+  engagementScoreBand: number;
+  engagementCategory: "engaged" | "neutral" | "disengaged";
+  mlConfidence: number;
+  eyeState: "open" | "closed" | "unstable";
+  gazeDirection: "focused" | "distracted";
+  headPoseState: "stable" | "tilted" | "extreme";
+  modelVersion: string;
   timestamp: string;
 }
 
@@ -53,6 +53,24 @@ export interface EngagementAnalysisResponse {
   inferenceFps?: number;
   backendModel?: string;
   modelConfidence?: number;
+}
+
+export interface EngagementVerificationRequest {
+  observation: EngagementAnalysisRequest;
+  clientResult: EngagementAnalysisResponse;
+}
+
+export interface EngagementVerificationResponse {
+  verifiedAt: string;
+  backendResult: EngagementAnalysisResponse;
+  drift: {
+    scoreDelta: number;
+    categoryMatch: boolean;
+    eyeStateMatch: boolean;
+    gazeDirectionMatch: boolean;
+    headPoseMatch: boolean;
+  };
+  verdict: "match" | "drifted";
 }
 
 export interface FeedbackEvent {

@@ -12,6 +12,16 @@ export interface VisualObservation {
   detectionStability?: number;
   frameTimestamp?: string;
   faceCropDataUrl?: string;
+  clientYoloResult?: {
+    engagementScore: number;
+    category: "engaged" | "neutral" | "disengaged";
+    confidence: number;
+    eyeState: "open" | "closed" | "unstable";
+    gazeDirection: "focused" | "distracted";
+    headPose: "stable" | "tilted" | "extreme";
+    signalQuality: "stable" | "unstable" | "insufficient";
+    modelVersion: string;
+  };
 }
 
 export interface EngagementSensingOutput {
@@ -25,7 +35,7 @@ export interface EngagementSensingService {
 }
 
 export function createEngagementSensingService(): EngagementSensingService {
-  let lastStableScore = 0.5;
+  let lastStableScore = 1;
   let recentScores: number[] = [];
   let latestOutput: EngagementSensingOutput = {
     engagementScore: lastStableScore,
