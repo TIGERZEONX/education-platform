@@ -14,7 +14,7 @@ export interface InProcessLiveBridge {
   dispose: () => void;
 }
 
-import fs from "fs";
+import * as fs from "fs";
 const LOG_FILE = "C:\\Users\\gautham jai\\Desktop\\cognative-smart-engagement\\student-eng-tracking\\education-platform\\server_debug.log";
 function logToFile(msg: string) {
   const line = `[${new Date().toISOString()}] [bridge] ${msg}\n`;

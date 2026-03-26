@@ -222,7 +222,8 @@ export default function App({ latestView, connected, lastUpdated }: AppProps) {
                           borderRadius: "10px",
                           background: student.latestEngagement < 0.4 ? "rgba(239,68,68,0.2)" : "rgba(245,158,11,0.2)",
                         }}>
-                          {Math.round(student.latestEngagement * 100)}% engaged
+                          {student.latestEngagementBand ?? Math.round(student.latestEngagement * 100)} / 100
+                          {student.latestEngagementCategory ? ` • ${student.latestEngagementCategory}` : ""}
                         </span>
                       )}
                     </div>

@@ -60,6 +60,11 @@ const studentContext = bootstrapStudentClient({
     },
   },
   feedbackMinIntervalMs: 1500,
+  engagementAnalysis: {
+    endpoint: `${SERVER_URL}/api/analyze-engagement`,
+    minIntervalMs: 65,
+    requestTimeoutMs: 700,
+  },
 });
 
 studentContext.confirmRealName(STUDENT_NAME);

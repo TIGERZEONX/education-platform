@@ -6,9 +6,10 @@ import { MongoClient } from "mongodb";
 import { startInProcessLiveBridge } from "../inprocess/live-bridge";
 import { parseIncomingPacket, getInProcessMqttBroker } from "../../../services/realtime-messaging/src";
 import { MongoDbHistoryStore } from "../../../services/persistence-history/src";
+import { createEngagementAnalyzer } from "../../../services/engagement-analysis/src";
+import type { EngagementAnalysisRequest } from "../../../../shared/communication/mqtt/contracts";
 
-import fs from "fs";
-import path from "path";
+import * as fs from "fs";
 
 const LOG_FILE = "C:\\Users\\gautham jai\\Desktop\\cognative-smart-engagement\\student-eng-tracking\\education-platform\\server_debug.log";
 
@@ -32,11 +33,12 @@ async function runServer() {
   
   const db = mongoClient.db("cognitivepulse");
   const historyStore = new MongoDbHistoryStore(db);
+  const engagementAnalyzer = createEngagementAnalyzer();
 
   // ── Express setup ─────────────────────────────────────────────────────────────
   const app = express();
   app.use(cors({ origin: "*" }));
-  app.use(express.json());
+  app.use(express.json({ limit: "2mb" }));
 
   const httpServer = createServer(app);
 
@@ -132,6 +134,61 @@ async function runServer() {
     } catch (e) {
       res.status(500).json({ error: "DB read failed" });
     }
+  });
+
+  app.post("/api/analyze-engagement", async (req, res) => {
+    const body = req.body as Partial<EngagementAnalysisRequest>;
+
+    if (!body || typeof body.studentId !== "string" || typeof body.classId !== "string") {
+      res.status(400).json({ error: "Missing required identifiers in analysis request." });
+      return;
+    }
+
+    if (
+      typeof body.facePresent !== "boolean" ||
+      typeof body.confidence !== "number" ||
+      typeof body.headOrientationScore !== "number" ||
+      typeof body.gazeFocusScore !== "number" ||
+      typeof body.attentivenessScore !== "number"
+    ) {
+      res.status(400).json({ error: "Invalid analysis metrics payload." });
+      return;
+    }
+
+    try {
+      const response = await engagementAnalyzer.analyze({
+        studentId: body.studentId,
+        classId: body.classId,
+        timestamp: body.timestamp ?? new Date().toISOString(),
+        facePresent: body.facePresent,
+        confidence: body.confidence,
+        headOrientationScore: body.headOrientationScore,
+        gazeFocusScore: body.gazeFocusScore,
+        attentivenessScore: body.attentivenessScore,
+        faceWidthRatio: body.faceWidthRatio,
+        detectionStability: body.detectionStability,
+        faceCropDataUrl: body.faceCropDataUrl,
+      });
+
+      res.json(response);
+    } catch {
+      res.status(500).json({ error: "Engagement analysis failed." });
+    }
+  });
+
+  app.get("/api/analyze-engagement/health", async (_req, res) => {
+    const health = await engagementAnalyzer.health();
+    res.json({
+      ...health,
+      timestamp: new Date().toISOString(),
+    });
+  });
+
+  app.get("/api/analyze-engagement/telemetry", (_req, res) => {
+    res.json({
+      ...engagementAnalyzer.telemetry(),
+      timestamp: new Date().toISOString(),
+    });
   });
 
   // ── Start ─────────────────────────────────────────────────────────────────────
