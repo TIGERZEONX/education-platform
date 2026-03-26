@@ -82,6 +82,14 @@ export interface TeacherClassDecisionSupportView {
     degraded: boolean;
     reasons: string[];
   };
+  allStudentEngagement: Array<{
+    studentId: string;
+    studentName: string;
+    latestEngagement: number | undefined;
+    latestEngagementBand: number | undefined;
+    latestEngagementCategory: "engaged" | "neutral" | "disengaged" | undefined;
+    latestStatus: string | undefined;
+  }>;
 }
 
 export interface TeacherHistoryReader {
@@ -320,5 +328,13 @@ export function buildTeacherDecisionSupportView(
       degraded: degradedReasons.length > 0,
       reasons: degradedReasons,
     },
+    allStudentEngagement: Object.values(viewModel.studentActivityById).map(s => ({
+      studentId: s.studentId,
+      studentName: s.studentName,
+      latestEngagement: s.latestEngagement,
+      latestEngagementBand: s.latestEngagementBand,
+      latestEngagementCategory: s.latestEngagementCategory,
+      latestStatus: s.latestStatus,
+    })),
   };
 }

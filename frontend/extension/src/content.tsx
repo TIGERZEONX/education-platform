@@ -1,6 +1,6 @@
 declare const chrome: any;
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { createRoot } from "react-dom/client";
 import Draggable from "react-draggable";
 
@@ -8,13 +8,18 @@ import StudentApp from "../../student-client/src/app/App";
 import TeacherApp from "../../teacher-dashboard/src/app/App";
 import { bootstrapStudentClient } from "../../student-client/src/app/bootstrap";
 import { bootstrapTeacherDashboard } from "../../teacher-dashboard/src/app/bootstrap";
-import type { TeacherClassDecisionSupportView } from "../../teacher-dashboard/src/app/decision-support-model";
+import type { TeacherClassDecisionSupportView, FlaggedStudentInspectionItem } from "../../teacher-dashboard/src/app/decision-support-model";
 
 const CLASS_ID = "class-101";
+const API_BASE = "http://localhost:4000";
 
 // Import true, pure Contexts without activating side-effects
 import { StudentContext } from "../../student-client/src/app/context";
 import { TeacherContext } from "../../teacher-dashboard/src/app/context";
+
+// --- Types ---
+interface TopicMarker { id: string; label: string; timestampSec: number; createdAt: string; }
+interface Recording { recordingId: string; classId: string; createdAt: string; fileSize: number; markers: TopicMarker[]; }
 
 // --- UI Helpers ---
 const dragBarStyles = {
@@ -60,17 +65,176 @@ class ErrorBoundary extends React.Component<{ children: React.ReactNode, name: s
   }
 }
 
+// --- RECORDING LIBRARY (Student view) ---
+function RecordingLibrary({ classId }: { classId: string }) {
+  const [recordings, setRecordings] = useState<Recording[]>([]);
+  const [selected, setSelected] = useState<Recording | null>(null);
+  const [loading, setLoading] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    fetch(`${API_BASE}/api/recordings/${classId}`)
+      .then(r => r.json())
+      .then(d => { setRecordings(d.recordings ?? []); setLoading(false); })
+      .catch(() => setLoading(false));
+  }, [classId]);
+
+  const seekTo = (sec: number) => {
+    if (videoRef.current) { videoRef.current.currentTime = sec; videoRef.current.play(); }
+  };
+
+  if (loading) return <div style={{ color: "#9ca3af", fontSize: "13px", padding: "8px" }}>Loading recordings...</div>;
+  if (recordings.length === 0) return <div style={{ color: "#9ca3af", fontSize: "13px", padding: "8px" }}>No recordings yet.</div>;
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+      {!selected ? (
+        recordings.map(r => (
+          <div key={r.recordingId} onClick={() => setSelected(r)} style={{ padding: "10px", background: "rgba(79,70,229,0.15)", borderRadius: "8px", cursor: "pointer", border: "1px solid rgba(79,70,229,0.3)" }}>
+            <div style={{ fontWeight: 600, fontSize: "13px", color: "#818cf8" }}>📹 Session Recording</div>
+            <div style={{ fontSize: "11px", color: "#9ca3af", marginTop: "3px" }}>
+              {new Date(r.createdAt).toLocaleString()} · {r.markers.length} topics
+            </div>
+          </div>
+        ))
+      ) : (
+        <div>
+          <button onClick={() => setSelected(null)} style={{ background: "none", border: "none", color: "#818cf8", cursor: "pointer", marginBottom: "8px", fontSize: "13px" }}>← Back to list</button>
+          <video ref={videoRef} src={`${API_BASE}/api/recordings/file/${selected.recordingId}`} controls style={{ width: "100%", borderRadius: "8px", background: "#000" }} />
+          <div style={{ marginTop: "8px" }}>
+            <div style={{ fontSize: "12px", fontWeight: 600, color: "#c4b5fd", marginBottom: "6px" }}>📌 Topics</div>
+            {selected.markers.length === 0 ? (
+              <div style={{ fontSize: "11px", color: "#9ca3af" }}>No topics marked yet.</div>
+            ) : (
+              selected.markers.sort((a, b) => a.timestampSec - b.timestampSec).map(m => (
+                <div key={m.id} onClick={() => seekTo(m.timestampSec)}
+                  style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "6px 8px", background: "rgba(139,92,246,0.15)", borderRadius: "6px", cursor: "pointer", marginBottom: "4px", border: "1px solid rgba(139,92,246,0.2)" }}>
+                  <span style={{ fontSize: "12px", color: "#e9d5ff" }}>📍 {m.label}</span>
+                  <span style={{ fontSize: "11px", color: "#9ca3af" }}>{Math.floor(m.timestampSec / 60)}:{String(Math.round(m.timestampSec % 60)).padStart(2, "0")}</span>
+                </div>
+              ))
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// --- TEACHER RECORDING MANAGER (Teacher view in dashboard) ---
+function TeacherRecordingManager({ classId }: { classId: string }) {
+  const [recordings, setRecordings] = useState<Recording[]>([]);
+  const [selected, setSelected] = useState<Recording | null>(null);
+  const [markerLabel, setMarkerLabel] = useState("");
+  const [loading, setLoading] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const fetchRecordings = useCallback(() => {
+    fetch(`${API_BASE}/api/recordings/${classId}`)
+      .then(r => r.json())
+      .then(d => { setRecordings(d.recordings ?? []); setLoading(false); })
+      .catch(() => setLoading(false));
+  }, [classId]);
+
+  useEffect(() => { fetchRecordings(); }, [fetchRecordings]);
+
+  const addMarker = async () => {
+    if (!selected || !markerLabel.trim() || !videoRef.current) return;
+    const timestampSec = videoRef.current.currentTime;
+    await fetch(`${API_BASE}/api/recordings/${selected.recordingId}/markers`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ label: markerLabel.trim(), timestampSec }),
+    });
+    setMarkerLabel("");
+    // Refresh selected recording markers
+    const resp = await fetch(`${API_BASE}/api/recordings/${selected.recordingId}/markers`);
+    const data = await resp.json();
+    setSelected(prev => prev ? { ...prev, markers: data.markers ?? [] } : null);
+  };
+
+  if (loading) return <div style={{ color: "#9ca3af", fontSize: "13px" }}>Loading recordings...</div>;
+  if (recordings.length === 0) return <div style={{ color: "#9ca3af", fontSize: "13px" }}>No recordings yet. Use the Record button to capture a session.</div>;
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+      {!selected ? (
+        recordings.map(r => (
+          <div key={r.recordingId} onClick={() => setSelected(r)} style={{ padding: "10px", background: "rgba(190,24,93,0.15)", borderRadius: "8px", cursor: "pointer", border: "1px solid rgba(190,24,93,0.3)" }}>
+            <div style={{ fontWeight: 600, fontSize: "13px", color: "#fb7185" }}>📹 Session Recording</div>
+            <div style={{ fontSize: "11px", color: "#9ca3af", marginTop: "3px" }}>
+              {new Date(r.createdAt).toLocaleString()} · {r.markers.length} topics marked
+            </div>
+          </div>
+        ))
+      ) : (
+        <div>
+          <button onClick={() => setSelected(null)} style={{ background: "none", border: "none", color: "#fb7185", cursor: "pointer", marginBottom: "8px", fontSize: "13px" }}>← Back to list</button>
+          <video ref={videoRef} src={`${API_BASE}/api/recordings/file/${selected.recordingId}`} controls style={{ width: "100%", borderRadius: "8px", background: "#000" }} />
+          {/* Mark topic */}
+          <div style={{ display: "flex", gap: "6px", marginTop: "8px" }}>
+            <input value={markerLabel} onChange={e => setMarkerLabel(e.target.value)} placeholder="Topic name…"
+              style={{ flex: 1, padding: "6px 8px", borderRadius: "6px", border: "1px solid rgba(255,255,255,0.2)", background: "rgba(0,0,0,0.3)", color: "white", fontSize: "12px", outline: "none" }} />
+            <button onClick={addMarker}
+              style={{ padding: "6px 10px", background: "linear-gradient(135deg,#be185d,#9f1239)", border: "none", borderRadius: "6px", color: "white", cursor: "pointer", fontSize: "12px", fontWeight: 600 }}>
+              📍 Mark
+            </button>
+          </div>
+          <div style={{ marginTop: "8px" }}>
+            <div style={{ fontSize: "11px", fontWeight: 600, color: "#fb7185", marginBottom: "4px" }}>Topics</div>
+            {selected.markers.sort((a, b) => a.timestampSec - b.timestampSec).map(m => (
+              <div key={m.id} style={{ display: "flex", justifyContent: "space-between", padding: "5px 8px", background: "rgba(190,24,93,0.1)", borderRadius: "5px", marginBottom: "3px" }}>
+                <span style={{ fontSize: "12px", color: "#fda4af" }}>📍 {m.label}</span>
+                <span style={{ fontSize: "11px", color: "#9ca3af" }}>{Math.floor(m.timestampSec / 60)}:{String(Math.round(m.timestampSec % 60)).padStart(2, "0")}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// --- STUDENT ENGAGEMENT LIST (in teacher overlay) ---
+function StudentEngagementList({ decisionView }: { decisionView: TeacherClassDecisionSupportView | null }) {
+  if (!decisionView) return <div style={{ color: "#9ca3af", fontSize: "12px" }}>Waiting for students…</div>;
+  const allStudents = Object.values(decisionView.flaggedStudentInspection);
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+      {allStudents.length === 0 && <div style={{ color: "#9ca3af", fontSize: "12px" }}>No students active.</div>}
+      {allStudents.map((s: FlaggedStudentInspectionItem) => {
+        const score = s.latestEngagement ?? null;
+        const pct = score !== null ? Math.round(score * 100) : null;
+        const color = score === null ? "#9ca3af" : score > 0.7 ? "#4ade80" : score > 0.4 ? "#facc15" : "#f87171";
+        return (
+          <div key={s.studentId} style={{ display: "flex", alignItems: "center", gap: "8px", padding: "6px 8px", background: "rgba(255,255,255,0.05)", borderRadius: "6px" }}>
+            <span style={{ fontSize: "11px", color: "white", flex: 1, fontWeight: 500 }}>{s.studentName}</span>
+            {pct !== null ? (
+              <>
+                <div style={{ flex: 2, height: "6px", background: "rgba(255,255,255,0.1)", borderRadius: "3px", overflow: "hidden" }}>
+                  <div style={{ height: "100%", width: `${pct}%`, background: color, borderRadius: "3px", transition: "width 0.5s ease" }} />
+                </div>
+                <span style={{ fontSize: "11px", color, minWidth: "32px", textAlign: "right" }}>{pct}%</span>
+              </>
+            ) : (
+              <span style={{ fontSize: "10px", color: "#9ca3af" }}>No data</span>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 // --- STUDENT WRAPPER ---
 function ExtensionStudentApp({ onClose, studentName }: { onClose: () => void, studentName: string }) {
   const STUDENT_ID = studentName.toLowerCase().replace(/\s+/g, '-');
   const [connected, setConnected] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
+  const [activeTab, setActiveTab] = useState<"live" | "recordings">("live");
   const nodeRef = useRef(null);
 
-  console.log(`[CognitivePulse] Mounting ExtensionStudentApp for ${studentName}`);
-
   const [studentContext] = useState(() => {
-    console.log(`[CognitivePulse] Bootstrapping student client for ${STUDENT_ID}`);
     const ctx = bootstrapStudentClient({
       classId: CLASS_ID,
       studentId: STUDENT_ID,
@@ -114,53 +278,28 @@ function ExtensionStudentApp({ onClose, studentName }: { onClose: () => void, st
   };
 
   useEffect(() => {
-    // 1. Confirm identity
-    console.log("[CognitivePulse] Confirming identity:", studentName);
     studentContext.confirmRealName(studentName);
-
-    // 2. Setup socket bridge listener
     const handleMessage = (message: any) => {
-      console.log("[CognitivePulse] Received chrome message:", message.type);
-      if (message.type === "SOCKET_CONNECTED") {
-        setConnected(true);
-        studentContext.setConnectionHealth("healthy");
-      }
-      if (message.type === "SOCKET_DISCONNECTED") {
-        setConnected(false);
-        studentContext.markTemporarilyDisconnected();
-      }
+      if (message.type === "SOCKET_CONNECTED") { setConnected(true); studentContext.setConnectionHealth("healthy"); }
+      if (message.type === "SOCKET_DISCONNECTED") { setConnected(false); studentContext.markTemporarilyDisconnected(); }
     };
-
     chrome.runtime.onMessage.addListener(handleMessage);
-
-    // 3. Init socket in background
-    safeSendMessage({ 
-      type: "INIT_SOCKET", 
-      payload: { role: "student", classId: CLASS_ID, studentId: STUDENT_ID } 
-    });
-
-    // 4. Join session
-    console.log("[CognitivePulse] Joining session...");
+    safeSendMessage({ type: "INIT_SOCKET", payload: { role: "student", classId: CLASS_ID, studentId: STUDENT_ID } });
     studentContext.joinClassSession();
-
-    // 5. Global Diagnostic Hook
-    (window as any).cpTestSignal = () => {
-      console.log("[CognitivePulse] Manual test signal triggered");
-      studentContext.publishEngagementHeartbeat();
-    };
-
-    return () => {
-      chrome.runtime.onMessage.removeListener(handleMessage);
-      studentContext.leaveClassSession();
-    };
+    return () => { chrome.runtime.onMessage.removeListener(handleMessage); studentContext.leaveClassSession(); };
   }, [studentContext, studentName, STUDENT_ID]);
+
+  const tabStyle = (active: boolean) => ({
+    flex: 1, padding: "6px 0", background: active ? "rgba(79,70,229,0.3)" : "transparent",
+    border: "none", color: active ? "white" : "#9ca3af", cursor: "pointer", fontSize: "12px", fontWeight: active ? 600 : 400, borderRadius: "6px"
+  });
 
   return (
     <Draggable nodeRef={nodeRef}>
       <div ref={nodeRef} style={{ position: "fixed", bottom: "20px", left: "20px", zIndex: 99999, width: "350px", boxShadow: "0 10px 30px rgba(0,0,0,0.5)", borderRadius: "12px", background: "#1e1e2d", cursor: "move" }}>
         <div style={dragBarStyles}>
           <span style={{ display: "flex", gap: "8px", alignItems: "center" }}>
-            👩‍🎓 Student Space ({studentName}) 
+            👩‍🎓 {studentName}
             <span style={{ fontSize: "10px", color: connected ? "#4ade80" : "#f87171" }}>●</span>
           </span>
           <div>
@@ -169,12 +308,25 @@ function ExtensionStudentApp({ onClose, studentName }: { onClose: () => void, st
           </div>
         </div>
         {!isMinimized && (
-          <div style={{ height: "450px", overflow: "hidden", padding: "12px", background: "#11111a" }}>
-            <ErrorBoundary name="StudentApp">
-              <StudentContext.Provider value={studentContext}>
-                <StudentApp />
-              </StudentContext.Provider>
-            </ErrorBoundary>
+          <div style={{ background: "#11111a", borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", overflow: "hidden" }}>
+            {/* Tabs */}
+            <div style={{ display: "flex", padding: "8px 8px 0", gap: "4px" }}>
+              <button style={tabStyle(activeTab === "live")} onClick={() => setActiveTab("live")}>📡 Live</button>
+              <button style={tabStyle(activeTab === "recordings")} onClick={() => setActiveTab("recordings")}>📹 Recordings</button>
+            </div>
+            {activeTab === "live" ? (
+              <div style={{ height: "420px", overflow: "hidden", padding: "12px" }}>
+                <ErrorBoundary name="StudentApp">
+                  <StudentContext.Provider value={studentContext}>
+                    <StudentApp />
+                  </StudentContext.Provider>
+                </ErrorBoundary>
+              </div>
+            ) : (
+              <div style={{ maxHeight: "420px", overflow: "auto", padding: "12px" }}>
+                <RecordingLibrary classId={CLASS_ID} />
+              </div>
+            )}
           </div>
         )}
       </div>
@@ -188,6 +340,13 @@ function ExtensionTeacherApp({ onClose }: { onClose: () => void }) {
   const [connected, setConnected] = useState(false);
   const [lastUpdated, setLastUpdated] = useState<string | null>(null);
   const [isMinimized, setIsMinimized] = useState(false);
+  const [activeTab, setActiveTab] = useState<"dashboard" | "students" | "recordings">("dashboard");
+  
+  // Recording state
+  const [isRecording, setIsRecording] = useState(false);
+  const [recordingStatus, setRecordingStatus] = useState("");
+  const mediaRecorderRef = useRef<MediaRecorder | null>(null);
+  const chunksRef = useRef<Blob[]>([]);
   const nodeRef = useRef(null);
 
   const [teacherContext] = useState(() => bootstrapTeacherDashboard({
@@ -201,18 +360,13 @@ function ExtensionTeacherApp({ onClose }: { onClose: () => void }) {
       try {
         if (typeof chrome !== "undefined" && chrome.runtime?.sendMessage) {
           chrome.runtime.sendMessage(msg, () => {
-            if (chrome.runtime.lastError) {
-              console.warn("[CognitivePulse] SendMessage error:", chrome.runtime.lastError.message);
-            }
+            if (chrome.runtime.lastError) console.warn("[CognitivePulse] SendMessage error:", chrome.runtime.lastError.message);
           });
         }
       } catch (e) { console.error("[CognitivePulse] Failed to send message", e); }
     };
 
-    safeSendMessage({ 
-      type: "INIT_SOCKET", 
-      payload: { role: "teacher", classId: CLASS_ID } 
-    });
+    safeSendMessage({ type: "INIT_SOCKET", payload: { role: "teacher", classId: CLASS_ID } });
 
     const listener = (message: any) => {
       if (message.type === "SOCKET_CONNECTED") setConnected(true);
@@ -228,9 +382,7 @@ function ExtensionTeacherApp({ onClose }: { onClose: () => void }) {
       if (message.type === "BACKEND_HISTORY") {
         const { cycles } = message.payload;
         if (cycles && cycles.length > 0) {
-          cycles.forEach((cycle: any) => {
-             teacherContext.consumeRawMqttMessage(cycle.topic, cycle.payload);
-          });
+          cycles.forEach((cycle: any) => { teacherContext.consumeRawMqttMessage(cycle.topic, cycle.payload); });
           setDecisionView(teacherContext.decisionSupportView());
           setLastUpdated(new Date().toLocaleTimeString());
         }
@@ -247,21 +399,107 @@ function ExtensionTeacherApp({ onClose }: { onClose: () => void }) {
     };
   }, [teacherContext]);
 
+  const startRecording = async () => {
+    try {
+      setRecordingStatus("Requesting screen access…");
+      const stream = await (navigator.mediaDevices as any).getDisplayMedia({ video: true, audio: true });
+      const recorder = new MediaRecorder(stream, { mimeType: "video/webm" });
+      chunksRef.current = [];
+      recorder.ondataavailable = (e) => { if (e.data.size > 0) chunksRef.current.push(e.data); };
+      recorder.onstop = async () => {
+        stream.getTracks().forEach((t: any) => t.stop());
+        setRecordingStatus("Uploading recording…");
+        const blob = new Blob(chunksRef.current, { type: "video/webm" });
+        const form = new FormData();
+        form.append("video", blob, "recording.webm");
+        form.append("classId", CLASS_ID);
+        try {
+          await fetch(`${API_BASE}/api/recordings/upload`, { method: "POST", body: form });
+          setRecordingStatus("✅ Saved! View in Recordings tab.");
+        } catch {
+          setRecordingStatus("❌ Upload failed.");
+        }
+        setTimeout(() => setRecordingStatus(""), 4000);
+        setIsRecording(false);
+      };
+      recorder.start(1000);
+      mediaRecorderRef.current = recorder;
+      setIsRecording(true);
+      setRecordingStatus("🔴 Recording…");
+    } catch (e) {
+      setRecordingStatus("Screen access denied.");
+      setTimeout(() => setRecordingStatus(""), 3000);
+    }
+  };
+
+  const stopRecording = () => {
+    mediaRecorderRef.current?.stop();
+  };
+
+  const tabStyle = (active: boolean) => ({
+    flex: 1, padding: "6px 0", background: active ? "rgba(190,24,93,0.3)" : "transparent",
+    border: "none", color: active ? "white" : "#9ca3af", cursor: "pointer", fontSize: "12px", fontWeight: active ? 600 : 400, borderRadius: "6px"
+  });
+
   return (
     <Draggable nodeRef={nodeRef}>
-      <div ref={nodeRef} style={{ position: "fixed", top: "20px", right: "20px", zIndex: 99999, width: "600px", boxShadow: "0 10px 30px rgba(0,0,0,0.5)", borderRadius: "12px", background: "#1e1e2d", border: "1px solid rgba(255,255,255,0.1)", cursor: "move" }}>
+      <div ref={nodeRef} style={{ position: "fixed", top: "20px", right: "20px", zIndex: 99999, width: "620px", boxShadow: "0 10px 30px rgba(0,0,0,0.5)", borderRadius: "12px", background: "#1e1e2d", border: "1px solid rgba(255,255,255,0.1)", cursor: "move" }}>
         <div style={{...dragBarStyles, background: "#831843"}}>
-          <span style={{ display: "flex", gap: "8px", alignItems: "center" }}>👨‍🏫 Live Classroom Dashboard</span>
-          <div>
+          <span style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+            👨‍🏫 Live Classroom Dashboard
+            <span style={{ fontSize: "10px", color: connected ? "#4ade80" : "#f87171" }}>●</span>
+          </span>
+          <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+            {/* Record button */}
+            {!isRecording ? (
+              <button onClick={startRecording} title="Start Recording"
+                style={{ padding: "4px 10px", background: "rgba(239,68,68,0.2)", border: "1px solid #ef4444", borderRadius: "6px", color: "#ef4444", cursor: "pointer", fontSize: "12px", fontWeight: 600 }}>
+                ⏺ Record
+              </button>
+            ) : (
+              <button onClick={stopRecording} title="Stop Recording"
+                style={{ padding: "4px 10px", background: "rgba(239,68,68,0.8)", border: "1px solid #ef4444", borderRadius: "6px", color: "white", cursor: "pointer", fontSize: "12px", fontWeight: 600, animation: "pulse 1s infinite" }}>
+                ⏹ Stop
+              </button>
+            )}
             <button onClick={() => setIsMinimized(!isMinimized)} style={btnStyle}>{isMinimized ? "⛶" : "−"}</button>
             <button onClick={onClose} style={btnStyle}>✕</button>
           </div>
         </div>
+        {recordingStatus && (
+          <div style={{ background: "rgba(239,68,68,0.15)", borderBottom: "1px solid rgba(239,68,68,0.3)", padding: "4px 12px", fontSize: "12px", color: "#fca5a5" }}>
+            {recordingStatus}
+          </div>
+        )}
         {!isMinimized && (
-          <div style={{ height: "70vh", overflowY: "auto", position: "relative" }}>
-            <TeacherContext.Provider value={teacherContext}>
-              <TeacherApp latestView={decisionView} connected={connected} lastUpdated={lastUpdated} />
-            </TeacherContext.Provider>
+          <div style={{ borderBottomLeftRadius: "12px", borderBottomRightRadius: "12px", overflow: "hidden" }}>
+            {/* Tabs */}
+            <div style={{ display: "flex", padding: "8px 8px 0", gap: "4px", background: "#1e1e2d" }}>
+              <button style={tabStyle(activeTab === "dashboard")} onClick={() => setActiveTab("dashboard")}>📊 Dashboard</button>
+              <button style={tabStyle(activeTab === "students")} onClick={() => setActiveTab("students")}>👥 Students</button>
+              <button style={tabStyle(activeTab === "recordings")} onClick={() => setActiveTab("recordings")}>📹 Recordings</button>
+            </div>
+            {activeTab === "dashboard" && (
+              <div style={{ height: "70vh", overflowY: "auto", position: "relative" }}>
+                <TeacherContext.Provider value={teacherContext}>
+                  <TeacherApp latestView={decisionView} connected={connected} lastUpdated={lastUpdated} />
+                </TeacherContext.Provider>
+              </div>
+            )}
+            {activeTab === "students" && (
+              <div style={{ padding: "12px", maxHeight: "70vh", overflowY: "auto" }}>
+                <div style={{ fontSize: "12px", fontWeight: 600, color: "#f472b6", marginBottom: "10px" }}>
+                  Live Engagement — All Students {decisionView ? `(${decisionView.classPulse.activeStudentCount} active)` : ""}
+                </div>
+                <StudentEngagementList decisionView={decisionView} />
+              </div>
+            )}
+            {activeTab === "recordings" && (
+              <div style={{ padding: "12px", maxHeight: "70vh", overflowY: "auto" }}>
+                <div style={{ fontSize: "12px", fontWeight: 600, color: "#fb7185", marginBottom: "10px" }}>📹 Session Recordings</div>
+                <TeacherRecordingManager classId={CLASS_ID} />
+              </div>
+            )}
           </div>
         )}
       </div>
@@ -278,17 +516,13 @@ function Gateway() {
   const nodeRef = useRef(null);
 
   const handleTeacherLogin = () => {
-    if (formInput === "teacher123") {
-      setView("teacher");
-      setErrorMsg("");
-    } else { setErrorMsg("Incorrect Teacher Passcode"); }
+    if (formInput === "teacher123") { setView("teacher"); setErrorMsg(""); }
+    else { setErrorMsg("Incorrect Teacher Passcode"); }
   };
 
   const handleStudentLogin = () => {
-    if (formInput === "student123" && nameInput.trim().length >= 2) {
-      setView("student");
-      setErrorMsg("");
-    } else { setErrorMsg("Incorrect Passcode or Name too short"); }
+    if (formInput === "student123" && nameInput.trim().length >= 2) { setView("student"); setErrorMsg(""); }
+    else { setErrorMsg("Incorrect Passcode or Name too short"); }
   };
 
   if (view === "student") return <ExtensionStudentApp onClose={() => setView("menu")} studentName={nameInput} />;
@@ -307,14 +541,10 @@ function Gateway() {
         {view === "menu" && (
           <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginTop: "8px" }}>
             <p style={{ margin: "0 0 4px 0", fontSize: "13px", color: "#9ca3af", lineHeight: 1.4 }}>Select your role to join the session analytics overlay.</p>
-            <button 
-              style={{ padding: "12px", background: "linear-gradient(135deg, #4f46e5 0%, #3730a3 100%)", color: "white", border: "none", borderRadius: "8px", cursor: "pointer", fontWeight: 600, fontSize: "15px" }}
-              onClick={() => { setView("login-student"); setFormInput(""); setErrorMsg(""); }}
-            >👩‍🎓 Enter as Student</button>
-            <button 
-              style={{ padding: "12px", background: "linear-gradient(135deg, #be185d 0%, #9f1239 100%)", color: "white", border: "none", borderRadius: "8px", cursor: "pointer", fontWeight: 600, fontSize: "15px" }}
-              onClick={() => { setView("login-teacher"); setFormInput(""); setErrorMsg(""); }}
-            >👨‍🏫 Enter as Teacher</button>
+            <button style={{ padding: "12px", background: "linear-gradient(135deg, #4f46e5 0%, #3730a3 100%)", color: "white", border: "none", borderRadius: "8px", cursor: "pointer", fontWeight: 600, fontSize: "15px" }}
+              onClick={() => { setView("login-student"); setFormInput(""); setErrorMsg(""); }}>👩‍🎓 Enter as Student</button>
+            <button style={{ padding: "12px", background: "linear-gradient(135deg, #be185d 0%, #9f1239 100%)", color: "white", border: "none", borderRadius: "8px", cursor: "pointer", fontWeight: 600, fontSize: "15px" }}
+              onClick={() => { setView("login-teacher"); setFormInput(""); setErrorMsg(""); }}>👨‍🏫 Enter as Teacher</button>
           </div>
         )}
         {view === "login-student" && (

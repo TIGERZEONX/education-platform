@@ -10,7 +10,6 @@
     {
       "matches": ["*://meet.google.com/*"],
       "js": ["dist/content.js"],
-      "css": ["dist/index.css"],
       "run_at": "document_idle"
     }
   ],

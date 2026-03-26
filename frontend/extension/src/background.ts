@@ -69,7 +69,7 @@ function initSocket(role: string, classId: string, studentId?: string) {
   });
 }
 
-chrome.runtime.onMessage.addListener((message: any, sender: any, sendResponse: (response?: any) => void) => {
+chrome.runtime.onMessage.addListener((message: any, _sender: any, _sendResponse: (response?: any) => void) => {
   switch (message.type) {
     case "INIT_SOCKET":
       initSocket(message.payload.role, message.payload.classId, message.payload.studentId);
@@ -84,5 +84,7 @@ chrome.runtime.onMessage.addListener((message: any, sender: any, sendResponse: (
       }
       break;
   }
-  return true;
+  // Do NOT return true — none of these cases use sendResponse asynchronously.
+  // Returning true would keep the message channel open and cause Chrome's
+  // "channel closed before a response" warning.
 });

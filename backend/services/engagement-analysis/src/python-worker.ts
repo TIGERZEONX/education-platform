@@ -42,11 +42,12 @@ export class YoloPythonWorker {
       "backend/services/engagement-analysis/python/yolo_worker.py",
     );
 
-    const venvPython = path.resolve(
-      process.cwd(),
-      "backend/services/engagement-analysis/python/.venv/bin/python",
-    );
-    const pythonBinary = fs.existsSync(venvPython) ? venvPython : "python3";
+    const isWin = process.platform === "win32";
+    const venvPython = isWin
+      ? path.resolve(process.cwd(), "backend/services/engagement-analysis/python/.venv/Scripts/python.exe")
+      : path.resolve(process.cwd(), "backend/services/engagement-analysis/python/.venv/bin/python");
+    
+    let pythonBinary = fs.existsSync(venvPython) ? venvPython : (isWin ? "python" : "python3");
 
     this.process = spawn(pythonBinary, [workerPath], {
       cwd: process.cwd(),

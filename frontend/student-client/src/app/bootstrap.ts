@@ -127,7 +127,7 @@ export function bootstrapStudentClient(
   let lastAnalysisAtMs = 0;
   let lastStrictSignal: EngagementSignal | null = null;
 
-  const maybeAnalyzeWithBackend = (observation: VisualObservation): void => {
+  const maybeAnalyzeWithBackend = (observation: VisualObservation, localSignal: EngagementSignal): void => {
     if (!engagementAnalyzer) {
       return;
     }
@@ -182,7 +182,8 @@ export function bootstrapStudentClient(
         lastAnalysisAtMs = nowMs;
       })
       .catch(() => {
-        // Strict mode: do not publish weak fallback signals.
+        // Fallback: publish the local sensing signal if backend analysis fails
+        runtime.publishEngagementSignal(localSignal);
       })
       .finally(() => {
         analysisInFlight = false;
@@ -280,7 +281,7 @@ export function bootstrapStudentClient(
       };
 
       if (engagementAnalyzer) {
-        void maybeAnalyzeWithBackend(observation);
+        void maybeAnalyzeWithBackend(observation, signal);
         return lastStrictSignal ?? signal;
       }
 

@@ -3,6 +3,8 @@ import { createServer } from "http";
 import { Server as SocketIoServer } from "socket.io";
 import cors from "cors";
 import { MongoClient } from "mongodb";
+import multer from "multer";
+import * as path from "path";
 import { startInProcessLiveBridge } from "../inprocess/live-bridge";
 import { parseIncomingPacket, getInProcessMqttBroker } from "../../../services/realtime-messaging/src";
 import { MongoDbHistoryStore } from "../../../services/persistence-history/src";
@@ -10,6 +12,19 @@ import { createEngagementAnalyzer } from "../../../services/engagement-analysis/
 import type { EngagementAnalysisRequest } from "../../../../shared/communication/mqtt/contracts";
 
 import * as fs from "fs";
+
+// ── Recordings directory ──────────────────────────────────────────────────────
+const RECORDINGS_DIR = path.join(__dirname, "..", "..", "recordings");
+if (!fs.existsSync(RECORDINGS_DIR)) { fs.mkdirSync(RECORDINGS_DIR, { recursive: true }); }
+
+const recordingStorage = multer.diskStorage({
+  destination: (_req, _file, cb) => cb(null, RECORDINGS_DIR),
+  filename: (_req, file, cb) => {
+    const id = `rec_${Date.now()}`;
+    cb(null, `${id}${path.extname(file.originalname) || ".webm"}`); 
+  },
+});
+const upload = multer({ storage: recordingStorage, limits: { fileSize: 500 * 1024 * 1024 } });
 
 const LOG_FILE = "C:\\Users\\gautham jai\\Desktop\\cognative-smart-engagement\\student-eng-tracking\\education-platform\\server_debug.log";
 
@@ -189,6 +204,71 @@ async function runServer() {
       ...engagementAnalyzer.telemetry(),
       timestamp: new Date().toISOString(),
     });
+  });
+
+  // ── Recording API ─────────────────────────────────────────────────────────────
+  const recordingsCollection = db.collection("recordings");
+
+  // Upload a recording (video blob)
+  app.post("/api/recordings/upload", upload.single("video"), async (req, res) => {
+    const { classId, sessionId, teacherId } = req.body as { classId?: string; sessionId?: string; teacherId?: string };
+    if (!req.file || !classId) {
+      res.status(400).json({ error: "Missing video file or classId" });
+      return;
+    }
+    const recordingId = path.basename(req.file.filename, path.extname(req.file.filename));
+    const doc = {
+      recordingId,
+      classId,
+      sessionId: sessionId ?? `${classId}-live`,
+      teacherId: teacherId ?? "teacher",
+      filename: req.file.filename,
+      fileSize: req.file.size,
+      markers: [] as Array<{ id: string; label: string; timestampSec: number; createdAt: string }>,
+      createdAt: new Date().toISOString(),
+    };
+    await recordingsCollection.insertOne(doc);
+    logToFile(`[server] Recording saved: ${recordingId}`);
+    const { recordingId: _rid, ...rest } = doc as any;
+    res.json({ recordingId, fileUrl: `/api/recordings/file/${recordingId}`, ...rest });
+  });
+
+  // List recordings for a class
+  app.get("/api/recordings/:classId", async (req, res) => {
+    const { classId } = req.params;
+    const recordings = await recordingsCollection.find({ classId }).sort({ createdAt: -1 }).toArray();
+    res.json({ classId, recordings });
+  });
+
+  // Serve the actual video file
+  app.get("/api/recordings/file/:recordingId", (req, res) => {
+    const { recordingId } = req.params;
+    const files = fs.readdirSync(RECORDINGS_DIR).filter(f => f.startsWith(recordingId));
+    if (files.length === 0) { res.status(404).json({ error: "Recording file not found" }); return; }
+    res.sendFile(path.join(RECORDINGS_DIR, files[0]));
+  });
+
+  // Add a topic marker to a recording
+  app.post("/api/recordings/:recordingId/markers", async (req, res) => {
+    const { recordingId } = req.params;
+    const { label, timestampSec } = req.body as { label?: string; timestampSec?: number };
+    if (!label || timestampSec === undefined) {
+      res.status(400).json({ error: "Missing label or timestampSec" });
+      return;
+    }
+    const marker = { id: `m_${Date.now()}`, label, timestampSec, createdAt: new Date().toISOString() };
+    await recordingsCollection.updateOne({ recordingId }, { $push: { markers: marker } } as any);
+    // broadcast to all students
+    io.emit("recording:marker:added", { recordingId, marker });
+    res.json({ recordingId, marker });
+  });
+
+  // Get markers for a recording
+  app.get("/api/recordings/:recordingId/markers", async (req, res) => {
+    const { recordingId } = req.params;
+    const doc = await recordingsCollection.findOne({ recordingId });
+    if (!doc) { res.status(404).json({ error: "Recording not found" }); return; }
+    res.json({ recordingId, markers: doc["markers"] ?? [] });
   });
 
   // ── Start ─────────────────────────────────────────────────────────────────────

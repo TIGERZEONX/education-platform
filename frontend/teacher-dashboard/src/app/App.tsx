@@ -200,6 +200,41 @@ export default function App({ latestView, connected, lastUpdated }: AppProps) {
             })()}
           </GlassCard>
 
+          {/* All Students Engagement */}
+          <GlassCard title="All Students — Live Engagement">
+            {latestView.allStudentEngagement.length === 0 ? (
+              <p style={{ fontSize: "0.9rem" }}>⏳ Waiting for students to join...</p>
+            ) : (
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                {latestView.allStudentEngagement
+                  .sort((a, b) => (b.latestEngagement ?? -1) - (a.latestEngagement ?? -1))
+                  .map((s) => {
+                    const score = s.latestEngagement ?? null;
+                    const pct = score !== null ? Math.round(score * 100) : null;
+                    const barColor = score === null ? "var(--text-secondary)" : score > 0.7 ? "var(--accent-green)" : score > 0.4 ? "var(--accent-yellow)" : "var(--accent-red)";
+                    return (
+                      <div key={s.studentId} style={{ display: "flex", alignItems: "center", gap: "0.75rem", padding: "0.5rem 0.75rem", background: "rgba(255,255,255,0.04)", borderRadius: "8px" }}>
+                        <div style={{ flex: "0 0 120px", fontSize: "0.85rem", fontWeight: 500, color: "var(--text-primary)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                          {s.studentName}
+                        </div>
+                        <div style={{ flex: 1, height: "8px", background: "rgba(255,255,255,0.08)", borderRadius: "4px", overflow: "hidden" }}>
+                          <div style={{ height: "100%", width: `${pct ?? 0}%`, background: barColor, borderRadius: "4px", transition: "width 0.7s ease" }} />
+                        </div>
+                        <span style={{ flex: "0 0 38px", fontSize: "0.8rem", color: barColor, textAlign: "right", fontWeight: 600 }}>
+                          {pct !== null ? `${pct}%` : "—"}
+                        </span>
+                        {s.latestEngagementCategory && (
+                          <span style={{ fontSize: "0.7rem", padding: "2px 6px", borderRadius: "8px", background: `${barColor}22`, color: barColor }}>
+                            {s.latestEngagementCategory}
+                          </span>
+                        )}
+                      </div>
+                    );
+                  })}
+              </div>
+            )}
+          </GlassCard>
+
           {/* Flagged Students */}
           <GlassCard title="Students Needing Attention">
             {latestView.flaggedStudentInspection.length === 0 ? (
