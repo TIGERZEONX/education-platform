@@ -20,10 +20,71 @@ function LiveFaceTracker() {
   const poseEstimatorRef = useRef(createHeadPoseEstimator());
   const debugOverlayRef = useRef(createDebugOverlay());
   const containerRef = useRef<HTMLDivElement>(null);
+  const cropCanvasRef = useRef<HTMLCanvasElement | null>(null);
 
   const MIN_PUBLISH_INTERVAL_MS = 60;
   const TARGET_CAMERA_WIDTH = 1280;
   const TARGET_CAMERA_HEIGHT = 720;
+
+  const clamp = (value: number, min: number, max: number): number => {
+    return Math.max(min, Math.min(max, value));
+  };
+
+  const captureFaceCropDataUrl = (landmarks: { x: number; y: number }[]): string | undefined => {
+    const video = videoRef.current;
+    if (!video || video.videoWidth <= 0 || video.videoHeight <= 0) {
+      return undefined;
+    }
+
+    let minX = 1;
+    let minY = 1;
+    let maxX = 0;
+    let maxY = 0;
+
+    for (const point of landmarks) {
+      minX = Math.min(minX, point.x);
+      minY = Math.min(minY, point.y);
+      maxX = Math.max(maxX, point.x);
+      maxY = Math.max(maxY, point.y);
+    }
+
+    const width = maxX - minX;
+    const height = maxY - minY;
+    if (width <= 0 || height <= 0) {
+      return undefined;
+    }
+
+    const padX = width * 0.25;
+    const padY = height * 0.25;
+    const boxLeft = clamp(minX - padX, 0, 1);
+    const boxTop = clamp(minY - padY, 0, 1);
+    const boxRight = clamp(maxX + padX, 0, 1);
+    const boxBottom = clamp(maxY + padY, 0, 1);
+
+    const sx = Math.floor(boxLeft * video.videoWidth);
+    const sy = Math.floor(boxTop * video.videoHeight);
+    const sw = Math.max(1, Math.floor((boxRight - boxLeft) * video.videoWidth));
+    const sh = Math.max(1, Math.floor((boxBottom - boxTop) * video.videoHeight));
+
+    if (sw < 40 || sh < 40) {
+      return undefined;
+    }
+
+    if (!cropCanvasRef.current) {
+      cropCanvasRef.current = document.createElement("canvas");
+    }
+
+    const canvas = cropCanvasRef.current;
+    canvas.width = 224;
+    canvas.height = 224;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) {
+      return undefined;
+    }
+
+    ctx.drawImage(video, sx, sy, sw, sh, 0, 0, canvas.width, canvas.height);
+    return canvas.toDataURL("image/jpeg", 0.72);
+  };
 
   useEffect(() => {
     let camera: Camera | null = null;
@@ -88,8 +149,12 @@ function LiveFaceTracker() {
 
             const detectionStability = Math.min(1, consecutiveDetections / 5);
             const baseFaceSize = faceWidth / 0.22;
-            const adaptiveThreshold = Math.max(0.5, 1 - Math.abs(baseFaceSize - 1) * 0.3);
-            const confidence = Math.max(0, Math.min(1, Number(((baseFaceSize * adaptiveThreshold) * detectionStability).toFixed(3))));
+            const confidence = clamp(
+              Number((0.2 + Math.min(1, baseFaceSize) * 0.45 + detectionStability * 0.35).toFixed(3)),
+              0,
+              1,
+            );
+            const faceCropDataUrl = captureFaceCropDataUrl(landmarks);
 
             context.publishVisualObservation({
               facePresent: true,
@@ -97,6 +162,10 @@ function LiveFaceTracker() {
               gazeFocusScore,
               attentivenessScore,
               confidence,
+              faceWidthRatio: Number(faceWidth.toFixed(3)),
+              detectionStability,
+              frameTimestamp: new Date().toISOString(),
+              faceCropDataUrl,
             });
 
             const report = metricsRef.current.record(true, confidence);
