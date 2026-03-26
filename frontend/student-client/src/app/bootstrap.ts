@@ -124,6 +124,7 @@ export function bootstrapStudentClient(
   let analysisInFlight = false;
   let lastAnalysisAtMs = 0;
   let strictPipelineHealthy = true;
+  let lastStrictSignalAtMs = Date.now();
   let lastStrictSignal: EngagementSignal = {
     studentId: config.studentId,
     studentName: config.studentName,
@@ -196,6 +197,7 @@ export function bootstrapStudentClient(
 
     runtime.publishEngagementSignal(clientSignal);
     lastStrictSignal = clientSignal;
+    lastStrictSignalAtMs = nowMs;
 
     engagementAnalyzer
       .verify({
@@ -215,13 +217,29 @@ export function bootstrapStudentClient(
       });
   };
 
+  const publishStrictHeartbeat = (): void => {
+    if (!strictPipelineHealthy) {
+      return;
+    }
+
+    const heartbeatStaleThresholdMs = Math.max(2000, config.publishing.studentEngagementIntervalMs * 2);
+    if (Date.now() - lastStrictSignalAtMs > heartbeatStaleThresholdMs) {
+      return;
+    }
+
+    runtime.publishEngagementSignal({
+      ...lastStrictSignal,
+      timestamp: config.now ? config.now() : new Date().toISOString(),
+    });
+  };
+
   const startHeartbeat = (): void => {
     if (heartbeatHandle) {
       clearInterval(heartbeatHandle);
     }
 
     heartbeatHandle = setInterval(() => {
-      runtime.publishEngagementHeartbeat();
+      publishStrictHeartbeat();
     }, config.publishing.studentEngagementIntervalMs);
   };
 
@@ -316,14 +334,7 @@ export function bootstrapStudentClient(
       runtime.publishFeedbackEvent(event);
     },
     publishEngagementHeartbeat: () => {
-      if (!strictPipelineHealthy) {
-        return;
-      }
-
-      runtime.publishEngagementSignal({
-        ...lastStrictSignal,
-        timestamp: config.now ? config.now() : new Date().toISOString(),
-      });
+      publishStrictHeartbeat();
     },
   };
 }

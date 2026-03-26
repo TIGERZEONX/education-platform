@@ -253,7 +253,7 @@ export function runDataFusionCycle(
       const inactive =
         latestSeenMs === undefined || cycleTimestampMs - latestSeenMs > input.windowConfig.activeStudentThresholdMs;
       const cameraOff = operationalState === "camera-off";
-      const engagementScore = latestEngagement?.score ?? (cameraOff ? 0 : 0.15);
+      const engagementScore = latestEngagement?.score ?? 0;
       const confusionCount = confusionByStudent.get(studentId) ?? 0;
       const signalQuality =
         latestEngagement === undefined
@@ -283,7 +283,9 @@ export function runDataFusionCycle(
     .map((state) => state.studentId);
 
   const engagementScores = fusedStudentStates
-    .filter((state) => !state.cameraOff && state.operationalState !== "disconnected")
+    .filter(
+      (state) => !state.cameraOff && state.operationalState !== "disconnected" && state.signalQuality !== "missing",
+    )
     .map((state) => state.engagementScore);
 
   const averageEngagementAcrossActiveStudents =
@@ -303,7 +305,11 @@ export function runDataFusionCycle(
   const cameraOffCount = fusedStudentStates.filter((state) => state.cameraOff).length;
   const inactiveCount = fusedStudentStates.filter((state) => state.inactive).length;
   const lowEngagementCount = fusedStudentStates.filter(
-    (state) => !state.cameraOff && !state.inactive && state.engagementScore < thresholds.red.maxAverageEngagement,
+    (state) =>
+      !state.cameraOff &&
+      !state.inactive &&
+      state.signalQuality !== "missing" &&
+      state.engagementScore < thresholds.red.maxAverageEngagement,
   ).length;
   const explicitConfusionCount = fusedStudentStates.reduce(
     (sum, state) => sum + state.explicitConfusionCount,

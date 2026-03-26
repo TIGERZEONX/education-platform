@@ -62,3 +62,39 @@ test("data fusion computes active students and class pulse", () => {
   assert.ok(aarav?.engagementTrend);
   assert.strictEqual(aarav?.engagementTrend?.direction, "up");
 });
+
+test("data fusion excludes missing engagement signals from class average", () => {
+  const cycleTimestamp = "2026-03-25T10:00:00.000Z";
+
+  const result = runDataFusionCycle({
+    classId: "class-101",
+    cycleTimestamp,
+    windowConfig: {
+      windowDurationMs: 120000,
+      activeStudentThresholdMs: 30000,
+    },
+    events: [
+      {
+        studentId: "Aarav",
+        classId: "class-101",
+        valueType: "engagement-score",
+        value: 0.8,
+        engagementScore: 0.8,
+        cameraStatus: "active",
+        timestamp: "2026-03-25T09:59:55.000Z",
+      },
+      {
+        studentId: "Mia",
+        classId: "class-101",
+        valueType: "feedback-type",
+        value: "repeat",
+        feedbackType: "repeat",
+        timestamp: "2026-03-25T09:59:58.000Z",
+      },
+    ],
+  });
+
+  assert.strictEqual(result.classPulseSnapshot.averageEngagement, 0.8);
+  const mia = result.derived.unifiedClassState.studentStates.find((state) => state.studentId === "Mia");
+  assert.strictEqual(mia?.signalQuality, "missing");
+});

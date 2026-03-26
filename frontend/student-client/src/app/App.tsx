@@ -92,6 +92,7 @@ function LiveFaceTracker() {
     let faceMesh: FaceMesh | null = null;
     let stream: MediaStream | null = null;
     let yoloBusy = false;
+    let pendingObservation: Parameters<typeof context.publishVisualObservation>[0] | null = null;
     let isMounted = true;
     let consecutiveDetections = 0;
     let consecutiveMisses = 0;
@@ -106,25 +107,37 @@ function LiveFaceTracker() {
       input: Parameters<typeof context.publishVisualObservation>[0],
     ): Promise<void> => {
       if (yoloBusy) {
+        // Keep only the freshest observation to avoid publish starvation while YOLO is busy.
+        pendingObservation = input;
         return;
       }
 
       yoloBusy = true;
       try {
-        const clientYoloResult = await clientYolo.analyze({
-          faceCropDataUrl: input.faceCropDataUrl,
-          confidence: input.confidence,
-          facePresent: input.facePresent,
-          frameTimestamp: input.frameTimestamp ?? new Date().toISOString(),
-        });
+        let nextObservation: Parameters<typeof context.publishVisualObservation>[0] | null = input;
 
-        context.publishVisualObservation({
-          ...input,
-          clientYoloResult,
-        });
+        while (nextObservation && isMounted) {
+          const clientYoloResult = await clientYolo.analyze({
+            faceCropDataUrl: nextObservation.faceCropDataUrl,
+            confidence: nextObservation.confidence,
+            facePresent: nextObservation.facePresent,
+            frameTimestamp: nextObservation.frameTimestamp ?? new Date().toISOString(),
+          });
+
+          context.publishVisualObservation({
+            ...nextObservation,
+            clientYoloResult,
+          });
+
+          nextObservation = pendingObservation;
+          pendingObservation = null;
+        }
       } catch {
-        setErrorMsg("Client YOLO unavailable. Live engagement is paused.");
-        setIsActive(false);
+        pendingObservation = null;
+        if (isMounted) {
+          setErrorMsg("Client YOLO unavailable. Live engagement is paused.");
+          setIsActive(false);
+        }
       } finally {
         yoloBusy = false;
       }
