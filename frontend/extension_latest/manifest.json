@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "CognitivePulse for Google Meet",
+  "version": "1.0.0",
+  "description": "Real-time AI engagement tracking and analytics overlay for Google Meet.",
+  "permissions": [
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://meet.google.com/*"],
+      "js": ["content.js"],
+      "css": ["index.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "CognitivePulse Settings"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}

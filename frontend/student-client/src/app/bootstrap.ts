@@ -60,7 +60,7 @@ export interface StudentClientBootstrapContext {
   publishFeedbackControl: (control: QuickFeedbackControl) => FeedbackEvent | null;
   publishEngagement: (signal: EngagementSignal) => void;
   publishFeedback: (event: FeedbackEvent) => void;
-
+  publishEngagementHeartbeat: () => void;
 }
 
 export function bootstrapStudentClient(
