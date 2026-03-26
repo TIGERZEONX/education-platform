@@ -19,7 +19,6 @@ import {
   type EngagementSensingService,
   type VisualObservation,
 } from "../vision/engagement-sensing-service";
-import { createEngagementAnalysisClient } from "../vision/engagement-analysis-client";
 import { createFeedbackController, type FeedbackController } from "../feedback/feedback-controls";
 import { buildStudentLaptopFirstView, type StudentLaptopFirstView } from "./student-interface-model";
 import type { ConnectionHealth, StudentClientEvent } from "../types/event-model";
@@ -35,11 +34,6 @@ export interface StudentClientBootstrapConfig {
   cameraAccessAdapter?: CameraAccessAdapter;
   feedbackMinIntervalMs?: number;
   now?: () => string;
-  engagementAnalysis?: {
-    endpoint: string;
-    minIntervalMs?: number;
-    requestTimeoutMs?: number;
-  };
 }
 
 export interface StudentClientBootstrapContext {
@@ -90,12 +84,6 @@ export function bootstrapStudentClient(
   const feedback = createFeedbackController({
     minIntervalMs: config.feedbackMinIntervalMs,
   });
-  const engagementAnalyzer = config.engagementAnalysis
-    ? createEngagementAnalysisClient({
-        endpoint: config.engagementAnalysis.endpoint,
-        requestTimeoutMs: config.engagementAnalysis.requestTimeoutMs ?? 700,
-      })
-    : null;
 
   const clientIdentity: MqttClientIdentity = {
     role: "student",
@@ -122,71 +110,6 @@ export function bootstrapStudentClient(
   });
 
   let heartbeatHandle: ReturnType<typeof setInterval> | undefined;
-  let analysisInFlight = false;
-  let lastAnalysisAtMs = 0;
-  let lastStrictSignal: EngagementSignal | null = null;
-
-  const maybeAnalyzeWithBackend = (observation: VisualObservation): void => {
-    if (!engagementAnalyzer) {
-      return;
-    }
-
-    if (analysisInFlight) {
-      return;
-    }
-
-    const nowMs = Date.now();
-    const minIntervalMs = config.engagementAnalysis?.minIntervalMs ?? 70;
-    if (nowMs - lastAnalysisAtMs < minIntervalMs) {
-      return;
-    }
-
-    analysisInFlight = true;
-    engagementAnalyzer
-      .analyze({
-        studentId: config.studentId,
-        classId: config.classId,
-        timestamp: observation.frameTimestamp ?? (config.now ? config.now() : new Date().toISOString()),
-        facePresent: observation.facePresent,
-        confidence: observation.confidence,
-        headOrientationScore: observation.headOrientationScore,
-        gazeFocusScore: observation.gazeFocusScore,
-        attentivenessScore: observation.attentivenessScore,
-        faceWidthRatio: observation.faceWidthRatio,
-        detectionStability: observation.detectionStability,
-        faceCropDataUrl: observation.faceCropDataUrl,
-      })
-      .then((result) => {
-        const normalizedRefinedScore = Math.max(0, Math.min(1, Number((result.engagementScore / 100).toFixed(3))));
-        const refinedSignal: EngagementSignal = {
-          studentId: config.studentId,
-          studentName: runtime.state().visibleStudentName,
-          classId: config.classId,
-          valueType: "engagement-score",
-          value: normalizedRefinedScore,
-          engagementScore: normalizedRefinedScore,
-          cameraStatus: runtime.state().cameraStatus,
-          engagementScoreBand: result.engagementScore,
-          engagementCategory: result.category,
-          mlConfidence: result.confidence,
-          eyeState: result.eyeState,
-          gazeDirection: result.gazeDirection,
-          headPoseState: result.headPose,
-          modelVersion: result.modelVersion,
-          timestamp: config.now ? config.now() : new Date().toISOString(),
-        };
-
-        runtime.publishEngagementSignal(refinedSignal);
-        lastStrictSignal = refinedSignal;
-        lastAnalysisAtMs = nowMs;
-      })
-      .catch(() => {
-        // Strict mode: do not publish weak fallback signals.
-      })
-      .finally(() => {
-        analysisInFlight = false;
-      });
-  };
 
   const startHeartbeat = (): void => {
     if (heartbeatHandle) {
@@ -277,11 +200,6 @@ export function bootstrapStudentClient(
         cameraStatus: runtime.state().cameraStatus,
         timestamp: config.now ? config.now() : new Date().toISOString(),
       };
-
-      if (engagementAnalyzer) {
-        void maybeAnalyzeWithBackend(observation);
-        return lastStrictSignal ?? signal;
-      }
 
       runtime.publishEngagementSignal(signal);
       return signal;

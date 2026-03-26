@@ -16,43 +16,7 @@ export interface EngagementSignal {
   value: number;
   engagementScore: number;
   cameraStatus: CameraStatus;
-  engagementScoreBand?: number;
-  engagementCategory?: "engaged" | "neutral" | "disengaged";
-  mlConfidence?: number;
-  eyeState?: "open" | "closed" | "unstable";
-  gazeDirection?: "focused" | "distracted";
-  headPoseState?: "stable" | "tilted" | "extreme";
-  modelVersion?: string;
   timestamp: string;
-}
-
-export interface EngagementAnalysisRequest {
-  studentId: Identifier;
-  classId: Identifier;
-  timestamp: string;
-  facePresent: boolean;
-  confidence: number;
-  headOrientationScore: number;
-  gazeFocusScore: number;
-  attentivenessScore: number;
-  faceWidthRatio?: number;
-  detectionStability?: number;
-  faceCropDataUrl?: string;
-}
-
-export interface EngagementAnalysisResponse {
-  engagementScore: number;
-  category: "engaged" | "neutral" | "disengaged";
-  confidence: number;
-  eyeState: "open" | "closed" | "unstable";
-  gazeDirection: "focused" | "distracted";
-  headPose: "stable" | "tilted" | "extreme";
-  signalQuality: "stable" | "unstable" | "insufficient";
-  modelVersion: string;
-  analysisLatencyMs?: number;
-  inferenceFps?: number;
-  backendModel?: string;
-  modelConfidence?: number;
 }
 
 export interface FeedbackEvent {
